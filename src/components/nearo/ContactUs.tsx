@@ -41,35 +41,35 @@ export const ContactUs = () => {
 
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Github className="w-6 h-6 text-blue-600" />
+                                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(76, 159, 215, 0.1)' }}>
+                                    <Github className="w-6 h-6" style={{ color: '#4c9fd7' }} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1">GitHub</h3>
                                     <p className="text-gray-600">Contribute to the project</p>
-                                    <a href="https://github.com/Razin-maker/Emp" className="text-blue-600 hover:underline text-sm">github.com/Razin-maker/Emp</a>
+                                    <a href="https://github.com/Razin-maker/Emp" className="hover:underline text-sm" style={{ color: '#4c9fd7' }}>github.com/Razin-maker/Emp</a>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <MessageSquare className="w-6 h-6 text-blue-600" />
+                                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(76, 159, 215, 0.1)' }}>
+                                    <MessageSquare className="w-6 h-6" style={{ color: '#4c9fd7' }} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1">Community</h3>
                                     <p className="text-gray-600">Join our discussions</p>
-                                    <a href="#community" className="text-blue-600 hover:underline text-sm">Join Discord</a>
+                                    <a href="#community" className="hover:underline text-sm" style={{ color: '#4c9fd7' }}>Join Discord</a>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <Mail className="w-6 h-6 text-blue-600" />
+                                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(76, 159, 215, 0.1)' }}>
+                                    <Mail className="w-6 h-6" style={{ color: '#4c9fd7' }} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 mb-1">Email</h3>
                                     <p className="text-gray-600">Direct support</p>
-                                    <a href="mailto:hello@emp.dev" className="text-blue-600 hover:underline text-sm">hello@emp.dev</a>
+                                    <a href="mailto:hello@emp.dev" className="hover:underline text-sm" style={{ color: '#4c9fd7' }}>hello@emp.dev</a>
                                 </div>
                             </div>
                         </div>
@@ -79,20 +79,20 @@ export const ContactUs = () => {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-bold text-slate-900 mb-2">Name</label>
-                                <input type="text" id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="Your name" required />
+                                <input type="text" id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 outline-none transition-all" style={{ focusBorderColor: '#4c9fd7', focusRingColor: 'rgba(76, 159, 215, 0.1)' }} placeholder="Your name" required />
                             </div>
 
                             <div>
                                 <label htmlFor="email" className="block text-sm font-bold text-slate-900 mb-2">Email</label>
-                                <input type="email" id="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all" placeholder="your@email.com" required />
+                                <input type="email" id="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 outline-none transition-all" style={{ focusBorderColor: '#4c9fd7', focusRingColor: 'rgba(76, 159, 215, 0.1)' }} placeholder="your@email.com" required />
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-bold text-slate-900 mb-2">Message</label>
-                                <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={6} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none" placeholder="Tell us about your project or question..." required />
+                                <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={6} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 outline-none transition-all resize-none" style={{ focusBorderColor: '#4c9fd7', focusRingColor: 'rgba(76, 159, 215, 0.1)' }} placeholder="Tell us about your project or question..." required />
                             </div>
 
-                            <button type="submit" disabled={status === 'sending'} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl disabled:opacity-50">
+                            <button type="submit" disabled={status === 'sending'} className="w-full text-white py-4 rounded-xl font-bold transition-colors shadow-lg hover:shadow-xl disabled:opacity-50" style={{ backgroundColor: '#4c9fd7' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a8bc4'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#4c9fd7'}>
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
                             
