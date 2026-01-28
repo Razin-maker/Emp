@@ -23,16 +23,11 @@ export const Hero = () => {
                 />
 
                 {/* Navbar Content Inside Card */}
-                <div className="max-w-7xl mx-auto relative z-10 pt-6 pb-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white font-bold border border-white/30 backdrop-blur-sm">
-                            😊
-                        </div>
-                        <span className="text-xl font-bold tracking-tight text-white">Nearo</span>
+                <div className="absolute left-[80px] top-6 z-10 flex items-center gap-2">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white font-bold border border-white/30 backdrop-blur-sm">
+                        😊
                     </div>
-                    <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors border border-gray-200 shadow-sm">
-                        TEMLIS
-                    </button>
+                    <span className="text-xl font-bold tracking-tight text-white">EMP</span>
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -51,28 +46,26 @@ const HeroVariant1 = () => (
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center text-center"
+        className="flex flex-col items-center text-center pt-20"
     >
-        {/* Stacked Badges */}
-        <div className="flex flex-col items-center gap-2 mb-8">
-            <span className="bg-brand-yellow text-black text-[10px] font-bold px-3 py-1 rounded-[4px] uppercase tracking-wider shadow-sm">Swap Hero 👋</span>
-            <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide border border-white/30">Coming Soon</span>
-        </div>
-
         <h1 className="text-5xl md:text-[72px] font-medium tracking-tight text-white mb-6 max-w-5xl leading-[1.1]">
-            Stay on top of every task, effortlessly
+            Work needs clarity.<br />Teams need execution.
         </h1>
 
-        <p className="text-xl text-white/80 mb-10 max-w-2xl font-normal">
-            Simplify your workflow, collaborate with your team, and get more done — all in one app.
+        <p className="text-xl text-white/80 mb-4 max-w-2xl font-normal">
+            EMP is an open-source Execution OS that brings people, tasks, rules, and accountability into one clear system.
+        </p>
+
+        <p className="text-base text-white/70 mb-10 max-w-2xl font-normal">
+            No license fees. No vendor lock-in. No hidden logic.
         </p>
 
         <div className="flex items-center gap-4 mb-20">
-            <button className="bg-white text-black px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wide shadow-xl hover:bg-gray-50 transition-colors w-[180px] h-[48px]">
-                Download Now
+            <button className="bg-white text-[#4A4A4A] px-8 py-4 rounded-full text-sm font-medium tracking-normal shadow-xl hover:bg-gray-50 transition-colors whitespace-nowrap">
+                Get EMP on GitHub
             </button>
-            <button className="bg-transparent backdrop-blur-sm text-white border border-white/40 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wide hover:bg-white/10 transition-colors w-[180px] h-[48px]">
-                Learn More
+            <button className="bg-white/20 backdrop-blur-sm text-white border border-white/40 px-8 py-4 rounded-full text-sm font-medium tracking-normal hover:bg-white/30 transition-colors whitespace-nowrap">
+                See How EMP Works
             </button>
         </div>
 

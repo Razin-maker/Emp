@@ -1,60 +1,105 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import taskImage from '../../assets/task.png';
+
+const features = [
+    {
+        icon: "🔹",
+        title: "Execution & Task Management",
+        description: "Track issues, tasks, planners, and initiatives with clear ownership and status.",
+        tagline: "From \"who will do it?\" to \"it's done.\"",
+        image: taskImage
+    },
+    {
+        icon: "🔹",
+        title: "Dashboards & Visibility",
+        description: "Live dashboards for employees, managers, and leadership.",
+        tagline: "Know what's happening — without asking."
+    },
+    {
+        icon: "🔹",
+        title: "Human Resource Lifecycle",
+        description: "Attendance, leave, payroll, assets, promotions, probation, separation.",
+        tagline: "HR that supports execution — not slows it down."
+    },
+    {
+        icon: "🔹",
+        title: "Rules, SOP & Governance",
+        description: "Company rules, policies, blacklists, workflows, approvals.",
+        tagline: "Discipline built into the system."
+    },
+    {
+        icon: "🔹",
+        title: "Planning, Goals & KPIs",
+        description: "Objectives, KPIs, PPM, and employee goals aligned with daily work.",
+        tagline: "Strategy meets execution."
+    },
+    {
+        icon: "🔹",
+        title: "Communication & Activity Feeds",
+        description: "Notifications, logs, summaries, Telegram integration.",
+        tagline: "Transparency without noise."
+    }
+];
 
 export const FeatureGrid = () => {
     return (
         <section className="py-32 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <FeatureCard
-                        title="Real-time Synchronization"
-                        description="Your tasks updated instantly across all devices."
-                        offset={20}
-                    />
-                    <FeatureCard
-                        title="Smart Notifications"
-                        description="Get notified only when it matters."
-                        offset={-20}
-                    />
-                    <FeatureCard
-                        title="Team Collaboration"
-                        description="Work together with your team in real-time."
-                        offset={20}
-                    />
-                    <FeatureCard
-                        title="Detailed Analytics"
-                        description="Track your progress with beautiful charts."
-                        offset={-20}
-                    />
+                    {features.map((feature, index) => (
+                        <FeatureCard
+                            key={index}
+                            icon={feature.icon}
+                            title={feature.title}
+                            description={feature.description}
+                            tagline={feature.tagline}
+                            offset={index % 2 === 0 ? 20 : -20}
+                            image={feature.image}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
     );
 };
 
-const FeatureCard = ({ title, description, offset }: { title: string, description: string, offset: number }) => {
+const FeatureCard = ({ icon, title, description, tagline, offset, image }: { icon: string, title: string, description: string, tagline: string, offset: number, image?: string }) => {
     const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    });
-
-    const y = useTransform(scrollYProgress, [0, 1], [0, offset]);
 
     return (
-        <div ref={ref} className="group relative h-[500px] bg-nearo-gray rounded-3xl overflow-hidden p-8 flex flex-col justify-end transition-all hover:shadow-xl">
-            <div className="absolute inset-0 flex items-center justify-center p-10">
-                <motion.div
-                    style={{ y }}
-                    className="w-full h-full bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center text-gray-300"
-                >
-                    Inner Card Parallax
-                </motion.div>
-            </div>
+        <div ref={ref} className="group relative h-[450px] bg-white rounded-3xl overflow-hidden p-8 flex flex-col justify-between transition-all hover:shadow-xl shadow-lg border border-gray-200">
+            {image && (
+                <div className="flex-1 flex items-center justify-center py-4">
+                    <div className="relative w-[280px] overflow-hidden h-[320px]">
+                        {/* iPhone Frame - Cropped to show only top portion */}
+                        <div className="relative bg-black rounded-[3rem] p-3 shadow-2xl">
+                            {/* Dynamic Island */}
+                            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-20"></div>
 
-            <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-2 text-slate-900">{title}</h3>
-                <p className="text-gray-500">{description}</p>
+                            {/* Screen */}
+                            <div className="bg-[#F5F5F0] rounded-[2.5rem] overflow-hidden relative" style={{ height: '600px' }}>
+                                {/* Status Bar */}
+                                <div className="flex items-center justify-between px-6 pt-3 pb-2">
+                                    <span className="text-xs font-semibold">9:41</span>
+                                    <div className="flex items-center gap-1">
+                                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4h4v16H2zm6 0h4v16H8zm6 0h4v16h-4zm6 0h4v16h-4z" /></svg>
+                                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" /></svg>
+                                        <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v2h10V4zm-3 18c.55 0 1-.45 1-1h-4c0 .55.45 1 1 1zm0-3c.55 0 1-.45 1-1H13c0 .55.45 1 1 1z" /></svg>
+                                    </div>
+                                </div>
+                                <img src={image} alt={title} className="w-full h-auto" />
+                            </div>
+                        </div>
+                        {/* Fade effect at bottom */}
+                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
+                    </div>
+                </div>
+            )}
+            <div className="text-center">
+                <h3 className="text-[20px] font-semibold mb-2 text-slate-900">{title}</h3>
+                <p className="text-[16px] text-gray-600 mb-3 leading-relaxed">{description}</p>
+                <p className="text-sm font-medium text-slate-700 italic">{tagline}</p>
             </div>
         </div>
     );

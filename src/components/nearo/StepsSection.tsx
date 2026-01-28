@@ -1,131 +1,96 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from '../../lib/utils';
+import taskImage from '../../assets/task.png';
 
 export const StepsSection = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    // Calculate active step based on scroll progress
-    const [activeStep, setActiveStep] = useState(1);
-
-    // Simple scroll listener to update active step for visual feedback
-    // In a real implementation we might map scrollYProgress to steps
-    useEffect(() => {
-        const unsubscribe = scrollYProgress.on("change", (latest) => {
-            if (latest < 0.3) setActiveStep(1);
-            else if (latest < 0.6) setActiveStep(2);
-            else setActiveStep(3);
-        });
-        return () => unsubscribe();
-    }, [scrollYProgress]);
-
     return (
-        <section ref={containerRef} className="relative h-[250vh] bg-white">
-            <div className="sticky top-0 h-screen md:flex p-6 max-w-7xl mx-auto items-center overflow-hidden">
+        <section className="py-32 px-6 bg-white">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    {/* Left Side: Title and Description - Sticky */}
+                    <div className="sticky top-32 self-start">
+                        <h2 className="text-5xl font-semibold mb-6 text-slate-900">
+                            Get started in<br />3 simple steps.
+                        </h2>
+                        <p className="text-gray-600 text-lg">
+                            Explore the features designed to keep you organized and on track.
+                        </p>
+                    </div>
 
-                {/* Left Side: Sticky Text */}
-                <div className="w-full md:w-1/2 p-8 md:pr-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-12 text-slate-900">
-                        Get started in <br />
-                        <span className="text-primary">3 simple steps</span>
-                    </h2>
+                    {/* Right Side: Timeline with Steps */}
+                    <div className="relative">
+                        {/* Vertical dashed line */}
+                        <div className="absolute left-[15px] top-8 bottom-8 w-[2px] border-l-2 border-dashed border-gray-300"></div>
 
-                    <div className="space-y-8 relative pl-8">
-                        {/* Vertical Line */}
-                        <div className="absolute left-[11px] top-2 bottom-2 w-0.5 bg-gray-200">
-                            <motion.div
-                                className="w-full bg-primary origin-top"
-                                style={{ height: useTransform(scrollYProgress, [0, 0.8], ["0%", "100%"]) }}
-                            />
+                        {/* Step 1 */}
+                        <div className="relative mb-32">
+                            <div className="absolute left-0 w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
+                                1
+                            </div>
+                            <div className="ml-16">
+                                <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
+                                    <div className="relative w-[240px] mx-auto overflow-hidden h-[280px]">
+                                        <div className="relative bg-black rounded-[3rem] p-3 shadow-2xl">
+                                            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-20"></div>
+                                            <div className="bg-[#F5F5F0] rounded-[2.5rem] overflow-hidden relative" style={{ height: '600px' }}>
+                                                <div className="flex items-center justify-between px-6 pt-3 pb-2">
+                                                    <span className="text-xs font-semibold">9:41</span>
+                                                    <div className="flex items-center gap-1">
+                                                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4h4v16H2zm6 0h4v16H8zm6 0h4v16h-4zm6 0h4v16h-4z" /></svg>
+                                                    </div>
+                                                </div>
+                                                <img src={taskImage} alt="App" className="w-full h-auto" />
+                                            </div>
+                                        </div>
+                                        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none z-10"></div>
+                                    </div>
+                                    <div className="mt-6 text-center">
+                                        <h3 className="text-xl font-semibold mb-2">Download Appo</h3>
+                                        <p className="text-gray-600 text-sm">Appo is available on App Store and Play Store.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        {[1, 2, 3].map((step) => (
-                            <div key={step} className="relative flex items-center gap-6">
-                                <div className={cn(
-                                    "w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold z-10 transition-colors duration-300 border-2",
-                                    activeStep >= step ? "bg-primary border-primary text-white" : "bg-white border-gray-200 text-gray-400"
-                                )}>
-                                    {step}
-                                </div>
-                                <span className={cn(
-                                    "text-xl font-medium transition-colors duration-300",
-                                    activeStep >= step ? "text-slate-900" : "text-gray-400"
-                                )}>
-                                    {step === 1 ? "Create an account" : step === 2 ? "Invite your team" : "Start collaborating"}
-                                </span>
+                        {/* Step 2 */}
+                        <div className="relative mb-32">
+                            <div className="absolute left-0 w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
+                                2
                             </div>
-                        ))}
-                    </div>
-                </div>
+                            <div className="ml-16">
+                                <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
+                                        <div>
+                                            <p className="font-semibold text-lg">Laura Munar</p>
+                                            <p className="text-gray-600 text-sm">lauramunar@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div className="text-center mt-6">
+                                        <h3 className="text-xl font-semibold mb-2">Create Account</h3>
+                                        <p className="text-gray-600 text-sm">Sign up with your email to get started.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                {/* Right Side: Scrollable Cards */}
-                {/* Since the parent is sticky h-screen, how do we scroll content? 
-            Ah, the parent 'section' is tall (250vh). The 'sticky' container stays fixed.
-            We need the right side content to move *through* the view or animate based on scroll.
-            For this specific "Nearo" design, the right side often has cards that slide up/fade.
-            Let's use a transform based on the main scroll.
-        */}
-                <div className="hidden md:block w-1/2 relative h-full flex items-center justify-center">
-                    <div className="relative w-full aspect-square max-w-[500px]">
-                        {/* Card 1 */}
-                        <StepCard
-                            step={1}
-                            current={activeStep}
-                            color="bg-blue-100"
-                            title="Sign Up"
-                        />
-                        {/* Card 2 */}
-                        <StepCard
-                            step={2}
-                            current={activeStep}
-                            color="bg-purple-100"
-                            title="Invite"
-                        />
-                        {/* Card 3 */}
-                        <StepCard
-                            step={3}
-                            current={activeStep}
-                            color="bg-yellow-100"
-                            title="Launch"
-                        />
+                        {/* Step 3 */}
+                        <div className="relative">
+                            <div className="absolute left-0 w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
+                                3
+                            </div>
+                            <div className="ml-16">
+                                <div className="bg-gray-50 rounded-3xl p-8 shadow-sm text-center">
+                                    <div className="text-5xl mb-4">🎉</div>
+                                    <h3 className="text-xl font-semibold mb-2">Start Using</h3>
+                                    <p className="text-gray-600 text-sm">Begin managing your tasks efficiently.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     );
 };
-
-const StepCard = ({ step, current, color, title }: { step: number, current: number, color: string, title: string }) => {
-    // Show card if it's the current one. Maybe crossfade?
-    // Let's simple stack them.
-
-    // Logic: 
-    // Step 1: Visible from start. 
-    // Step 2: Comes in when Step 2 is active.
-
-    // Better: Position absolute, animate opacity/y
-
-    const isVisible = current === step;
-    const isPast = current > step;
-
-    return (
-        <motion.div
-            className={cn("absolute inset-0 rounded-3xl shadow-2xl flex items-center justify-center p-8", color)}
-            initial={{ opacity: 0, y: 100, scale: 0.9 }}
-            animate={{
-                opacity: isVisible || isPast ? 1 : 0,
-                y: isVisible ? 0 : isPast ? -50 : 100,
-                scale: isVisible ? 1 : isPast ? 0.9 : 0.9,
-                zIndex: isVisible ? 10 : isPast ? 5 : 0 // Active on top
-            }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
-            <h3 className="text-4xl font-bold text-slate-800/20">{title}</h3>
-            <div className="absolute inset-4 border-2 border-dashed border-slate-900/10 rounded-2xl" />
-        </motion.div>
-    )
-}
