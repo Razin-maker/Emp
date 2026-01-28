@@ -1,4 +1,7 @@
-export const ManifestoSection = () => {
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+const ManifestoSectionDesktop = () => {
     const beliefs = [
         "Work should be visible",
         "Ownership should be clear",
@@ -11,14 +14,27 @@ export const ManifestoSection = () => {
         <section className="py-32 px-6 bg-gradient-to-b from-amber-50 to-amber-100 relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Book title above */}
-                <div className="text-center mb-20">
-                    <h2 className="text-[48px] font-serif font-bold text-amber-900 mb-2">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-20"
+                >
+                    <h2 className="text-[clamp(2rem,4vw,3rem)] font-serif font-bold text-amber-900 mb-2">
                         The Philosophy
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Realistic Open Book */}
-                <div className="relative max-w-[1100px] mx-auto" style={{ perspective: '2500px' }}>
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9, rotateX: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="relative max-w-[1100px] mx-auto" 
+                    style={{ perspective: '2500px' }}
+                >
                     {/* Book base shadow */}
                     <div className="absolute inset-0 bg-black/30 blur-3xl transform translate-y-12 scale-95"></div>
                     
@@ -78,7 +94,7 @@ export const ManifestoSection = () => {
                                 <div className="absolute top-12 left-12 text-sm text-amber-600 font-serif">— 500 —</div>
                                 
                                 <div className="relative h-full flex flex-col justify-center">
-                                    <h3 className="text-[40px] font-serif font-bold text-slate-900 mb-16 leading-tight">
+                                    <h3 className="text-[clamp(1.75rem,3vw,2.5rem)] font-serif font-bold text-slate-900 mb-16 leading-tight">
                                         Execution Should<br />Be Clear
                                     </h3>
                                     
@@ -126,7 +142,7 @@ export const ManifestoSection = () => {
                                         </div>
                                         
                                         <div className="space-y-8">
-                                            <p className="text-[24px] font-serif text-amber-700 italic">
+                                            <p className="text-[clamp(1.25rem,2vw,1.5rem)] font-serif text-amber-700 italic">
                                                 EMP is not a tool.
                                             </p>
                                             
@@ -136,7 +152,7 @@ export const ManifestoSection = () => {
                                                 <div className="w-8 h-px bg-amber-400"></div>
                                             </div>
                                             
-                                            <p className="text-[46px] font-serif font-bold text-slate-900 leading-tight">
+                                            <p className="text-[clamp(2rem,3.5vw,2.875rem)] font-serif font-bold text-slate-900 leading-tight">
                                                 It's how teams<br />execute.
                                             </p>
                                         </div>
@@ -155,8 +171,114 @@ export const ManifestoSection = () => {
                             }}></div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
+};
+
+const ManifestoSectionMobile = () => {
+    const beliefs = [
+        "Work should be visible",
+        "Ownership should be clear",
+        "Rules should be enforced by systems, not shouting",
+        "People deserve structure, not confusion",
+        "Software should empower teams — not control them"
+    ];
+
+    return (
+        <section className="py-16 px-4 bg-gradient-to-b from-amber-50 to-amber-100">
+            <div className="max-w-md mx-auto">
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-3xl font-serif font-bold text-amber-900 text-center mb-8"
+                >
+                    The Philosophy
+                </motion.h2>
+
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="relative"
+                >
+                    {/* Book shadow */}
+                    <div className="absolute inset-0 bg-black/20 blur-xl transform translate-y-4"></div>
+                    
+                    {/* Book */}
+                    <div className="relative bg-white rounded-lg shadow-2xl overflow-hidden">
+                        {/* Left and Right pages */}
+                        <div className="grid grid-cols-2 gap-0">
+                            {/* Left Page */}
+                            <div className="p-4 border-r border-amber-200" style={{
+                                background: 'linear-gradient(to right, #fef3c7 0%, #fffbeb 3%, #ffffff 10%, #ffffff 100%)'
+                            }}>
+                                <div className="text-xs text-amber-600 font-serif mb-3">— 500 —</div>
+                                <h3 className="text-base font-serif font-bold text-slate-900 mb-3 leading-tight">
+                                    Execution Should Be Clear
+                                </h3>
+                                <p className="text-xs font-serif text-amber-800 mb-2 italic">We believe:</p>
+                                <div className="space-y-2">
+                                    {beliefs.map((belief, index) => (
+                                        <div key={index} className="flex items-start gap-1.5">
+                                            <span className="text-amber-600 font-serif text-xs">❖</span>
+                                            <p className="text-[10px] font-serif text-slate-800 leading-relaxed">
+                                                {belief}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Right Page */}
+                            <div className="p-4 flex flex-col items-center justify-center text-center" style={{
+                                background: 'linear-gradient(to left, #fef3c7 0%, #fffbeb 3%, #ffffff 10%, #ffffff 100%)'
+                            }}>
+                                <div className="text-xs text-amber-600 font-serif mb-3 self-end">— 501 —</div>
+                                <div className="flex-1 flex flex-col items-center justify-center space-y-3">
+                                    <svg width="40" height="40" viewBox="0 0 80 80" className="text-amber-700">
+                                        <circle cx="40" cy="40" r="35" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+                                        <circle cx="40" cy="40" r="20" fill="currentColor"/>
+                                    </svg>
+                                    <p className="text-xs font-serif text-amber-700 italic">
+                                        EMP is not a tool.
+                                    </p>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-4 h-px bg-amber-400"></div>
+                                        <span className="text-amber-600 text-xs">❖</span>
+                                        <div className="w-4 h-px bg-amber-400"></div>
+                                    </div>
+                                    <p className="text-base font-serif font-bold text-slate-900 leading-tight">
+                                        It's how teams execute.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Book spine */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-800 via-amber-900 to-amber-800" style={{
+                            boxShadow: '0 0 10px rgba(0,0,0,0.5)'
+                        }}></div>
+                    </div>
+                </motion.div>
+            </div>
+        </section>
+    );
+};
+
+export const ManifestoSection = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    return isMobile ? <ManifestoSectionMobile /> : <ManifestoSectionDesktop />;
 };

@@ -23,14 +23,9 @@ const features = [
     {
         icon: "🔹",
         title: "Rules, SOP & Governance",
-<<<<<<< HEAD
-        description: "Company rules, policies, blacklists, workflows, approvals.",
-        
-        image: sopImage
-=======
         description: "Company rules, policies, blacklists, workflows, and approvals.",
-        tagline: "Discipline built into the system."
->>>>>>> e50032a59c6553ee3ca32bc7b76d78ed63f3ba8b
+        tagline: "Discipline built into the system.",
+        image: sopImage
     },
     {
         icon: "🔹",
@@ -48,16 +43,10 @@ const features = [
     },
     {
         icon: "🔹",
-<<<<<<< HEAD
         title: "Planning, Goals & KPIs",
         description: "Objectives, KPIs, PPM, and employee goals aligned with daily work.",
-        tagline: "Strategy meets execution.",
+        
         image: kpiImage
-=======
-        title: "Communication & Activity Feeds",
-        description: "Notifications, activity logs, summaries, and Telegram integration.",
-        tagline: "Transparency without noise."
->>>>>>> e50032a59c6553ee3ca32bc7b76d78ed63f3ba8b
     }
 ];
 
@@ -65,14 +54,21 @@ export const FeatureGrid = () => {
     return (
         <section className="py-32 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-[48px] font-semibold mb-4 text-slate-900">Core Features</h2>
-                    <p className="text-[16px] text-gray-600">Features Designed for Real Execution</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold mb-4 text-slate-900">Core Features</h2>
+                    <p className="text-[clamp(0.875rem,1.5vw,1rem)] text-gray-600">Features Designed for Real Execution</p>
+                </motion.div>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
                     {features.map((feature, index) => (
                         <FeatureCard
                             key={index}
+                            index={index}
                             icon={feature.icon}
                             title={feature.title}
                             description={feature.description}
@@ -87,11 +83,15 @@ export const FeatureGrid = () => {
     );
 };
 
-const FeatureCard = ({ icon, title, description, tagline, offset, image }: { icon: string, title: string, description: string, tagline: string, offset: number, image?: string }) => {
+const FeatureCard = ({ index, icon, title, description, tagline, offset, image }: { index: number, icon: string, title: string, description: string, tagline: string, offset: number, image?: string }) => {
     const ref = useRef(null);
 
     return (
-        <div ref={ref} className="group relative h-[450px] rounded-3xl overflow-hidden p-8 flex flex-col justify-between transition-all hover:shadow-xl shadow-lg border border-gray-200" style={{ backgroundColor: '#eeeff0' }}>
+        <div 
+            ref={ref}
+            className="group relative h-[380px] md:h-[450px] rounded-2xl md:rounded-3xl overflow-hidden p-4 md:p-8 flex flex-col justify-between transition-all hover:shadow-xl shadow-lg border border-gray-200" 
+            style={{ backgroundColor: '#eeeff0' }}
+        >
             {image && (
                 <div className="flex-1 flex items-start justify-center pt-0 pb-2">
                     {title === "Execution & Task Management" ? (
@@ -221,9 +221,9 @@ const FeatureCard = ({ icon, title, description, tagline, offset, image }: { ico
                     )}
                 </div>
             )}
-            <div className="text-center" style={title === "Dashboards & Visibility" ? { marginTop: '50px' } : title === "Rules, SOP & Governance" ? { marginTop: '60px' } : title === "Planning, Goals & KPIs" ? { marginTop: '30px' } : undefined}>
-                <h3 className="text-[20px] font-semibold mb-2 text-slate-900">{title}</h3>
-                <p className="text-[16px] text-gray-600 mb-3 leading-relaxed">{description}</p>
+            <div className="text-center" style={title === "Dashboards & Visibility" ? { marginTop: '30px' } : title === "Rules, SOP & Governance" ? { marginTop: '60px' } : title === "Planning, Goals & KPIs" ? { marginTop: '30px' } : title === "Communication & Activity Feeds" ? { marginTop: '18px' } : undefined}>
+                <h3 className="text-[clamp(1.125rem,2vw,1.25rem)] font-semibold mb-2 text-slate-900">{title}</h3>
+                <p className="text-[clamp(0.875rem,1.5vw,1rem)] text-gray-600 mb-3 leading-relaxed">{description}</p>
                 <p className="text-sm font-medium text-slate-700 italic">{tagline}</p>
             </div>
         </div>

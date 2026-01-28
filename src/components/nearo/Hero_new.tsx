@@ -58,11 +58,11 @@ const HeroVariant1 = () => (
             <span className="bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide border border-white/30">Coming Soon</span>
         </div>
 
-        <h1 className="text-5xl md:text-[72px] font-medium tracking-tight text-white mb-6 max-w-5xl leading-[1.1]">
+        <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-medium tracking-tight text-white mb-6 max-w-5xl leading-[1.1]">
             Stay on top of every task, effortlessly
         </h1>
 
-        <p className="text-xl text-white/80 mb-10 max-w-2xl font-normal">
+        <p className="text-[clamp(1rem,2vw,1.25rem)] text-white/80 mb-10 max-w-2xl font-normal">
             Simplify your workflow, collaborate with your team, and get more done — all in one app.
         </p>
 
