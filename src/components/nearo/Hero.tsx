@@ -47,8 +47,9 @@ const HeroVariant1 = () => (
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center text-center pt-20"
+        style={{ fontFamily: '"Inter", sans-serif' }}
     >
-        <h1 className="text-5xl md:text-[72px] font-medium tracking-tight text-white mb-6 max-w-5xl leading-[1.1]">
+        <h1 className="text-5xl md:text-[72px] font-medium text-white mb-6 max-w-5xl leading-[1.2]" style={{ letterSpacing: '-0.06em' }}>
             Work needs clarity.<br />Teams need execution.
         </h1>
 
