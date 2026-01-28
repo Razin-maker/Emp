@@ -7,28 +7,28 @@ const features = [
     {
         icon: "🔹",
         title: "Execution & Task Management",
-        description: "Track issues, tasks, planners, and initiatives with clear ownership and status.",
+        description: "Track issues, tasks, planners, and initiatives with clear ownership and lifecycle.",
         tagline: "From \"who will do it?\" to \"it's done.\"",
         image: taskImage
     },
     {
         icon: "🔹",
         title: "Dashboards & Visibility",
-        description: "Live dashboards for employees, managers, and leadership.",
-        
+        description: "Live dashboards for employees, managers, and leadership — always up to date.",
+        tagline: "",
         image: dashboardImage
     },
     {
         icon: "🔹",
         title: "Rules, SOP & Governance",
-        description: "Company rules, policies, blacklists, workflows, approvals.",
+        description: "Company rules, policies, blacklists, workflows, and approvals.",
         tagline: "Discipline built into the system."
     },
     {
         icon: "🔹",
-        title: "Human Resource Lifecycle",
-        description: "Attendance, leave, payroll, assets, promotions, probation, separation.",
-        
+        title: "HR Portal",
+        description: "Attendance, leave, payroll, assets, promotions, probation, and separation — all connected.",
+        tagline: "",
         image: "hr" // placeholder to trigger HR mockup
     },
     {
@@ -40,7 +40,7 @@ const features = [
     {
         icon: "🔹",
         title: "Communication & Activity Feeds",
-        description: "Notifications, logs, summaries, Telegram integration.",
+        description: "Notifications, activity logs, summaries, and Telegram integration.",
         tagline: "Transparency without noise."
     }
 ];
@@ -50,8 +50,8 @@ export const FeatureGrid = () => {
         <section className="py-32 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-[48px] font-semibold mb-4 text-slate-900">Everything your team needs — without fragmentation.</h2>
-                    <p className="text-[16px] text-gray-600">Explore the features designed to keep you organized and on track.</p>
+                    <h2 className="text-[48px] font-semibold mb-4 text-slate-900">Core Features</h2>
+                    <p className="text-[16px] text-gray-600">Features Designed for Real Execution</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {features.map((feature, index) => (
@@ -102,7 +102,7 @@ const FeatureCard = ({ icon, title, description, tagline, offset, image }: { ico
                             {/* Fade effect at bottom */}
                             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
                         </div>
-                    ) : title === "Human Resource Lifecycle" ? (
+                    ) : title === "HR Portal" ? (
                         <div className="relative w-[280px] overflow-hidden h-[320px]">
                             <div className="relative bg-black rounded-[3rem] p-3 shadow-2xl">
                                 <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-20"></div>

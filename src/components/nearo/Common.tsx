@@ -32,37 +32,39 @@ export const Footer = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div className="col-span-1 md:col-span-2">
                     <div className="flex items-center gap-2 mb-6">
-                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-bold">N</div>
-                        <span className="text-xl font-bold">Nearo</span>
+                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-bold">😊</div>
+                        <span className="text-xl font-bold">EMP</span>
                     </div>
-                    <p className="text-gray-500 max-w-sm">
-                        Experience smooth task management like never before.
-                        Built with care by Temlis.
+                    <p className="text-gray-500 max-w-sm mb-4">
+                        Open Source Execution Management Platform
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                        Clarity • Accountability • Transparency
                     </p>
                 </div>
 
                 <div>
                     <h4 className="font-bold mb-6 text-gray-300">Product</h4>
                     <ul className="space-y-4 text-gray-500">
+                        <li><a href="#" className="hover:text-white transition-colors">About</a></li>
                         <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Changelog</a></li>
+                        <li><a href="#" className="hover:text-white transition-colors">Open Source</a></li>
+                        <li><a href="#" className="hover:text-white transition-colors">Use Cases</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 className="font-bold mb-6 text-gray-300">Company</h4>
+                    <h4 className="font-bold mb-6 text-gray-300">Resources</h4>
                     <ul className="space-y-4 text-gray-500">
-                        <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" className="hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
+                        <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-900 text-center text-gray-600">
-                © {new Date().getFullYear()} Nearo Inc. All rights reserved.
+                © EMP Open Source Project
             </div>
         </footer>
     );

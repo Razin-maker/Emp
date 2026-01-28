@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 
 export const ProblemSection = () => {
     const beforeProblems = [
-        "Work happens in chats, sheets, and tools that don't talk",
-        "Managers don't know what's really moving",
-        "HR becomes paperwork, not people",
-        "Tasks get lost, ownership is unclear",
-        "Rules exist, but no one follows them"
+        "Work lives in chats, sheets, and tools that don't talk to each other",
+        "Managers can't see what's actually moving",
+        "HR turns into paperwork instead of people",
+        "Tasks get lost, ownership stays unclear",
+        "Rules exist, but no one consistently follows them"
     ];
 
     const afterSolutions = [
-        "EMP connects tasks, people, and workflows in one system",
-        "EMP gives real-time visibility into execution",
-        "EMP structures HR processes and lifecycle",
-        "EMP tracks every task with clear ownership",
-        "EMP enforces rules and SOPs automatically"
+        "Tasks, planners, and issues live in one place",
+        "Real-time visibility into execution and progress",
+        "HR processes are structured and traceable",
+        "Every task has clear ownership and status",
+        "Rules, SOPs, and approvals are enforced by the system"
     ];
 
     return (
@@ -96,7 +96,7 @@ export const ProblemSection = () => {
                 <div className="text-center mt-20">
                     <div className="inline-block bg-slate-900 px-8 py-4 rounded-full shadow-lg">
                         <p className="text-[18px] font-semibold text-white">
-                            When everything is scattered, execution breaks.
+                            When everything is fragmented, execution breaks.
                         </p>
                     </div>
                 </div>

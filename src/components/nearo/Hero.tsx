@@ -50,14 +50,15 @@ const HeroVariant1 = () => (
         style={{ fontFamily: '"Inter", sans-serif' }}
     >
         <h1 className="text-5xl md:text-[72px] font-medium text-white mb-6 max-w-5xl leading-[1.2]" style={{ letterSpacing: '-0.06em' }}>
-            Work needs clarity.<br />Teams need execution.
+            Work Needs Clarity.<br />Teams Need Execution.
         </h1>
 
         <p className="text-xl text-white/80 mb-4 max-w-2xl font-normal">
-            EMP is an open-source Execution OS that brings people, tasks, rules, and accountability into one clear system.
+            EMP is an open-source Execution Operating System that brings people, tasks, rules, and accountability into one clear, structured platform.
         </p>
 
         <p className="text-base text-white/70 mb-10 max-w-2xl font-normal">
+            No more guessing. No more scattered tools. Just visible work and clear ownership.<br />
             No license fees. No vendor lock-in. No hidden logic.
         </p>
 
