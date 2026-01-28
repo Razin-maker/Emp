@@ -46,6 +46,10 @@ export const FeatureGrid = () => {
     return (
         <section className="py-32 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16">
+                    <h2 className="text-[48px] font-semibold mb-4 text-slate-900">Everything your team needs — without fragmentation.</h2>
+                    <p className="text-[16px] text-gray-600">Explore the features designed to keep you organized and on track.</p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {features.map((feature, index) => (
                         <FeatureCard
