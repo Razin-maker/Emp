@@ -5,6 +5,7 @@ import { ProblemSection } from './components/nearo/ProblemSection';
 import { FeatureGrid } from './components/nearo/FeatureGrid';
 import { StepsSection } from './components/nearo/StepsSection';
 import { Testimonials, Footer } from './components/nearo/Common';
+import { ContactUs } from './components/nearo/ContactUs';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <FeatureGrid />
             <StepsSection />
             <Testimonials />
+            <ContactUs />
             <Footer />
         </div>
     );
