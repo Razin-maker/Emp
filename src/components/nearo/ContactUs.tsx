@@ -1,44 +1,22 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, MessageSquare, Github } from 'lucide-react';
+import React from 'react';
 
 export const ContactUs = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-    const [status, setStatus] = useState('');
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('sending');
-        
-        try {
-            const response = await fetch('http://localhost:9000/send-mail.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
-            
-            const result = await response.json();
-            
-            if (result.success) {
-                setStatus('success');
-                setFormData({ name: '', email: '', message: '' });
-                setTimeout(() => setStatus(''), 3000);
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            setStatus('error');
-        }
-    };
-
     return (
         <section id="contact" className="py-32 px-6 bg-white">
-            <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                    <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Get in Touch</h2>
-                        <p className="text-xl text-gray-600 mb-12">Have questions about EMP? Want to contribute? We'd love to hear from you.</p>
+            <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-[48px] font-semibold mb-6 text-slate-900 leading-tight">
+                    Ready to Execute With Confidence?
+                </h2>
+                
+                <p className="text-[20px] text-gray-700 mb-4 leading-relaxed">
+                    Use EMP to build a system where work is visible, ownership is clear, and teams stay aligned.
+                </p>
+                
+                <p className="text-[18px] text-gray-600 mb-12 leading-relaxed">
+                    Join the open-source community and help shape how teams execute.
+                </p>
 
+<<<<<<< HEAD
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
                                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(76, 159, 215, 0.1)' }}>
@@ -72,9 +50,27 @@ export const ContactUs = () => {
                                     <a href="mailto:hello@emp.dev" className="hover:underline text-sm" style={{ color: '#4c9fd7' }}>hello@emp.dev</a>
                                 </div>
                             </div>
-                        </div>
-                    </motion.div>
+=======
+                <div className="flex items-center justify-center gap-4 mb-16">
+                    <button className="bg-slate-900 text-white px-8 py-4 rounded-full text-base font-medium shadow-xl hover:bg-slate-800 transition-colors">
+                        Get EMP on GitHub
+                    </button>
+                    <button className="bg-white text-slate-900 border-2 border-slate-900 px-8 py-4 rounded-full text-base font-medium hover:bg-slate-50 transition-colors">
+                        Join the Community
+                    </button>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+                    <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-4">
+                            <span className="text-3xl">📚</span>
+>>>>>>> e50032a59c6553ee3ca32bc7b76d78ed63f3ba8b
+                        </div>
+                        <h3 className="font-bold text-slate-900 mb-2">Documentation</h3>
+                        <p className="text-gray-600 text-sm">Clear installation guides and module docs</p>
+                    </div>
+
+<<<<<<< HEAD
                     <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-gray-50 rounded-3xl p-8 md:p-12">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
@@ -100,6 +96,23 @@ export const ContactUs = () => {
                             {status === 'error' && <p className="text-red-600 text-center font-medium">Failed to send. Please try again.</p>}
                         </form>
                     </motion.div>
+=======
+                    <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-4">
+                            <span className="text-3xl">💬</span>
+                        </div>
+                        <h3 className="font-bold text-slate-900 mb-2">Community</h3>
+                        <p className="text-gray-600 text-sm">Community-driven improvements</p>
+                    </div>
+
+                    <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-4">
+                            <span className="text-3xl">🤝</span>
+                        </div>
+                        <h3 className="font-bold text-slate-900 mb-2">Contribute</h3>
+                        <p className="text-gray-600 text-sm">Contribution guidelines available</p>
+                    </div>
+>>>>>>> e50032a59c6553ee3ca32bc7b76d78ed63f3ba8b
                 </div>
             </div>
         </section>

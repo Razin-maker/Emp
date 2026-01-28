@@ -14,10 +14,10 @@ export const StepsSection = () => {
                     {/* Left Side: Title and Description - Sticky */}
                     <div className="sticky top-32 self-start">
                         <h2 className="text-5xl font-semibold mb-6 text-slate-900">
-                            Get started in<br />3 simple steps.
+                            Open Source — By Design
                         </h2>
                         <p className="text-gray-600 text-lg">
-                            Explore the features designed to keep you organized and on track.
+                            Get Started in Three Simple Steps
                         </p>
                     </div>
 
@@ -36,7 +36,7 @@ export const StepsSection = () => {
                                     <div className="text-center">
                                         <img src={githubLogo} alt="GitHub" className="w-24 h-24 mx-auto mb-4" />
                                         <h3 className="text-xl font-semibold mb-2">Clone from GitHub</h3>
-                                        <p className="text-gray-600 text-sm">Get the EMP source code from our GitHub repository.</p>
+                                        <p className="text-gray-600 text-sm">Download the EMP source code from our public repository.</p>
                                     </div>
                                 </div>
                             </div>
@@ -50,8 +50,8 @@ export const StepsSection = () => {
                             <div className="ml-16">
                                 <div className="rounded-3xl p-8 shadow-sm text-center bg-white">
                                     <img src={serverGif} alt="Server" className="w-24 h-24 mx-auto mb-4" />
-                                    <h3 className="text-xl font-semibold mb-2">Deploy in your server</h3>
-                                    <p className="text-gray-600 text-sm">Set up EMP on your own infrastructure.</p>
+                                    <h3 className="text-xl font-semibold mb-2">Deploy on Your Server</h3>
+                                    <p className="text-gray-600 text-sm">Run EMP on your own infrastructure — fully under your control.</p>
                                 </div>
                             </div>
                         </div>
@@ -64,8 +64,8 @@ export const StepsSection = () => {
                             <div className="ml-16">
                                 <div className="rounded-3xl p-8 shadow-sm text-center bg-white">
                                     <img src={databaseGif} alt="Database" className="w-24 h-24 mx-auto mb-4" />
-                                    <h3 className="text-xl font-semibold mb-2">Set up the database</h3>
-                                    <p className="text-gray-600 text-sm">Configure your database and start using EMP.</p>
+                                    <h3 className="text-xl font-semibold mb-2">Set Up the Database</h3>
+                                    <p className="text-gray-600 text-sm">Configure your database and start executing with clarity.</p>
                                 </div>
                             </div>
                         </div>
