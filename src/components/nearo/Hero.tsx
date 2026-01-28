@@ -87,7 +87,7 @@ const HeroVariant1 = () => (
                     </div>
                     <div className="flex-1">
                         <h3 className="font-bold text-gray-900 mb-1.5 text-lg">Wireframe Homepage</h3>
-                        <p className="text-sm text-gray-500 mb-3">Temlis</p>
+                        <p className="text-sm text-gray-500 mb-3">Tanvir</p>
                         <span className="inline-block bg-red-50 text-red-600 text-xs px-2.5 py-1 rounded-full font-medium">● High Priority</span>
                     </div>
                     <span className="text-xs text-gray-400 font-medium">Feb 20</span>
@@ -102,7 +102,7 @@ const HeroVariant1 = () => (
                     </div>
                     <div>
                         <p className="text-xs text-gray-500 font-medium">Goals</p>
-                        <p className="font-bold text-base">Rona Zepri</p>
+                        <p className="font-bold text-base">Tanvir Islam</p>
                     </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4 text-center">
@@ -155,7 +155,7 @@ const HeroVariant1 = () => (
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="font-semibold text-gray-900 mb-1">Final Design Review</h3>
-                                            <p className="text-sm text-gray-500 mb-2">Produlis App</p>
+                                            <p className="text-sm text-gray-500 mb-2">ECS Flutter App</p>
                                             <span className="inline-block bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded-full">● High Priority</span>
                                         </div>
                                     </div>

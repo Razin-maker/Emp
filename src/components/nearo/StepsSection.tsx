@@ -2,6 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import taskImage from '../../assets/task.png';
+import githubLogo from '../../assets/GitHub-Logo.wine.svg';
+import serverGif from '../../assets/dedicated-server.gif';
+import databaseGif from '../../assets/data-collection.gif';
 
 export const StepsSection = () => {
     return (
@@ -29,25 +32,11 @@ export const StepsSection = () => {
                                 1
                             </div>
                             <div className="ml-16">
-                                <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
-                                    <div className="relative w-[240px] mx-auto overflow-hidden h-[280px]">
-                                        <div className="relative bg-black rounded-[3rem] p-3 shadow-2xl">
-                                            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-20"></div>
-                                            <div className="bg-[#F5F5F0] rounded-[2.5rem] overflow-hidden relative" style={{ height: '600px' }}>
-                                                <div className="flex items-center justify-between px-6 pt-3 pb-2">
-                                                    <span className="text-xs font-semibold">9:41</span>
-                                                    <div className="flex items-center gap-1">
-                                                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4h4v16H2zm6 0h4v16H8zm6 0h4v16h-4zm6 0h4v16h-4z" /></svg>
-                                                    </div>
-                                                </div>
-                                                <img src={taskImage} alt="App" className="w-full h-auto" />
-                                            </div>
-                                        </div>
-                                        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent pointer-events-none z-10"></div>
-                                    </div>
-                                    <div className="mt-6 text-center">
-                                        <h3 className="text-xl font-semibold mb-2">Download Appo</h3>
-                                        <p className="text-gray-600 text-sm">Appo is available on App Store and Play Store.</p>
+                                <div className="rounded-3xl p-8 shadow-sm bg-white">
+                                    <div className="text-center">
+                                        <img src={githubLogo} alt="GitHub" className="w-24 h-24 mx-auto mb-4" />
+                                        <h3 className="text-xl font-semibold mb-2">Clone from GitHub</h3>
+                                        <p className="text-gray-600 text-sm">Get the EMP source code from our GitHub repository.</p>
                                     </div>
                                 </div>
                             </div>
@@ -59,18 +48,10 @@ export const StepsSection = () => {
                                 2
                             </div>
                             <div className="ml-16">
-                                <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
-                                        <div>
-                                            <p className="font-semibold text-lg">Laura Munar</p>
-                                            <p className="text-gray-600 text-sm">lauramunar@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div className="text-center mt-6">
-                                        <h3 className="text-xl font-semibold mb-2">Create Account</h3>
-                                        <p className="text-gray-600 text-sm">Sign up with your email to get started.</p>
-                                    </div>
+                                <div className="rounded-3xl p-8 shadow-sm text-center bg-white">
+                                    <img src={serverGif} alt="Server" className="w-24 h-24 mx-auto mb-4" />
+                                    <h3 className="text-xl font-semibold mb-2">Deploy in your server</h3>
+                                    <p className="text-gray-600 text-sm">Set up EMP on your own infrastructure.</p>
                                 </div>
                             </div>
                         </div>
@@ -81,10 +62,10 @@ export const StepsSection = () => {
                                 3
                             </div>
                             <div className="ml-16">
-                                <div className="bg-gray-50 rounded-3xl p-8 shadow-sm text-center">
-                                    <div className="text-5xl mb-4">🎉</div>
-                                    <h3 className="text-xl font-semibold mb-2">Start Using</h3>
-                                    <p className="text-gray-600 text-sm">Begin managing your tasks efficiently.</p>
+                                <div className="rounded-3xl p-8 shadow-sm text-center bg-white">
+                                    <img src={databaseGif} alt="Database" className="w-24 h-24 mx-auto mb-4" />
+                                    <h3 className="text-xl font-semibold mb-2">Set up the database</h3>
+                                    <p className="text-gray-600 text-sm">Configure your database and start using EMP.</p>
                                 </div>
                             </div>
                         </div>

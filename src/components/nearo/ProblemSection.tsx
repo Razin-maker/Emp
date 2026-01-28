@@ -2,23 +2,19 @@ import { motion } from 'framer-motion';
 
 export const ProblemSection = () => {
     const beforeProblems = [
-        "Multiple tools for tasks & timesheets",
-        "Missed deadlines due to poor visibility",
-        "Manual updates and disconnected workflows",
-        "Resource overload or idle time",
-        "Confusing billing and stakeholder disputes",
-        "No single view of project health",
-        "Reactive decision-making"
+        "Work happens in chats, sheets, and tools that don't talk",
+        "Managers don't know what's really moving",
+        "HR becomes paperwork, not people",
+        "Tasks get lost, ownership is unclear",
+        "Rules exist, but no one follows them"
     ];
 
     const afterSolutions = [
-        "One integrated module for all",
-        "Accurate timelines with real-time updates",
-        "Real-time dashboards and alerts",
-        "Smart allocation with availability insights",
-        "Public timesheet links and transparent billing",
-        "Centralized dashboard with key metrics",
-        "Proactive control with instant insights"
+        "EMP connects tasks, people, and workflows in one system",
+        "EMP gives real-time visibility into execution",
+        "EMP structures HR processes and lifecycle",
+        "EMP tracks every task with clear ownership",
+        "EMP enforces rules and SOPs automatically"
     ];
 
     return (
@@ -36,7 +32,7 @@ export const ProblemSection = () => {
                         <div className="w-[380px] space-y-4">
                             <div className="bg-white rounded-2xl px-6 py-3 mb-6 shadow-sm inline-block">
                                 <p className="text-base font-bold text-slate-900">
-                                    Before CollabCRM <span className="text-xl">😟</span>
+                                    Before EMP <span className="text-xl">😟</span>
                                 </p>
                             </div>
                             {beforeProblems.map((problem, index) => (
@@ -58,29 +54,17 @@ export const ProblemSection = () => {
                             <motion.div
                                 animate={{ 
                                     boxShadow: [
-                                        '0 20px 60px rgba(168, 85, 247, 0.4)',
-                                        '0 20px 80px rgba(168, 85, 247, 0.6)',
-                                        '0 20px 60px rgba(168, 85, 247, 0.4)'
+                                        '0 20px 60px rgba(76, 159, 215, 0.4)',
+                                        '0 20px 80px rgba(76, 159, 215, 0.6)',
+                                        '0 20px 60px rgba(76, 159, 215, 0.4)'
                                     ]
                                 }}
                                 transition={{ duration: 2, repeat: Infinity }}
-                                className="relative w-56 h-56 rounded-[2rem] bg-gradient-to-br from-purple-500 via-purple-400 to-orange-400 flex flex-col items-center justify-center"
+                                className="relative w-56 h-56 rounded-[2rem] flex flex-col items-center justify-center"
+                                style={{ backgroundColor: '#4c9fd7' }}
                             >
-                                {/* Chip pins - left side */}
-                                <div className="absolute left-0 top-[25%] bottom-[25%] flex flex-col justify-around -ml-2">
-                                    {[...Array(7)].map((_, i) => (
-                                        <div key={`left-${i}`} className="w-3 h-1.5 bg-purple-700 rounded-r"></div>
-                                    ))}
-                                </div>
-                                {/* Chip pins - right side */}
-                                <div className="absolute right-0 top-[25%] bottom-[25%] flex flex-col justify-around -mr-2">
-                                    {[...Array(7)].map((_, i) => (
-                                        <div key={`right-${i}`} className="w-3 h-1.5 bg-purple-700 rounded-l"></div>
-                                    ))}
-                                </div>
                                 {/* Logo */}
-                                <div className="text-5xl mb-2">🔥</div>
-                                <div className="text-white text-2xl font-bold tracking-wide">CollabCRM</div>
+                                <div className="text-white text-5xl font-bold tracking-wide">EMP</div>
                             </motion.div>
                         </div>
 
@@ -88,7 +72,7 @@ export const ProblemSection = () => {
                         <div className="w-[380px] space-y-4">
                             <div className="bg-white rounded-2xl px-6 py-3 mb-6 shadow-sm inline-block float-right">
                                 <p className="text-base font-bold text-slate-900">
-                                    <span className="text-xl">😊</span> After CollabCRM
+                                    <span className="text-xl">😊</span> After EMP
                                 </p>
                             </div>
                             <div className="clear-both"></div>
@@ -107,56 +91,6 @@ export const ProblemSection = () => {
                             ))}
                         </div>
                     </div>
-
-                    {/* SVG for all curved lines */}
-                    <svg className="absolute inset-0 pointer-events-none" style={{ width: '100%', height: '100%' }}>
-                        {/* Left side curves - each line to each pin */}
-                        {beforeProblems.map((_, index) => {
-                            const startY = 120 + (index * 52);
-                            const chipCenterX = 700;
-                            const chipWidth = 224;
-                            const chipLeftEdge = chipCenterX - (chipWidth / 2) - 12;
-                            const chipHeight = 224;
-                            const chipTop = 200;
-                            const pinsStart = chipTop + 70;
-                            const pinsEnd = chipTop + chipHeight - 70;
-                            const pinSpacing = (pinsEnd - pinsStart) / 6;
-                            const pinY = pinsStart + (pinSpacing * index);
-                            return (
-                                <path
-                                    key={`left-${index}`}
-                                    d={`M 380 ${startY} C 480 ${startY}, 540 ${pinY}, ${chipLeftEdge} ${pinY}`}
-                                    stroke="#22d3ee"
-                                    strokeWidth="1.5"
-                                    strokeDasharray="4 4"
-                                    fill="none"
-                                />
-                            );
-                        })}
-                        {/* Right side curves - each line to each pin */}
-                        {afterSolutions.map((_, index) => {
-                            const startY = 120 + (index * 52);
-                            const chipCenterX = 700;
-                            const chipWidth = 224;
-                            const chipRightEdge = chipCenterX + (chipWidth / 2) + 12;
-                            const chipHeight = 224;
-                            const chipTop = 200;
-                            const pinsStart = chipTop + 70;
-                            const pinsEnd = chipTop + chipHeight - 70;
-                            const pinSpacing = (pinsEnd - pinsStart) / 6;
-                            const pinY = pinsStart + (pinSpacing * index);
-                            return (
-                                <path
-                                    key={`right-${index}`}
-                                    d={`M 1020 ${startY} C 920 ${startY}, 860 ${pinY}, ${chipRightEdge} ${pinY}`}
-                                    stroke="#c084fc"
-                                    strokeWidth="1.5"
-                                    strokeDasharray="4 4"
-                                    fill="none"
-                                />
-                            );
-                        })}
-                    </svg>
                 </div>
 
                 <div className="text-center mt-20">
