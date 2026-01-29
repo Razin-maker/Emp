@@ -219,7 +219,7 @@ const HeroVariantMobile = () => (
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="w-full mx-auto relative overflow-visible h-[270px]"
+            className="w-full mx-auto relative overflow-visible h-[270px] mt-8"
         >
             {/* Floating Wireframe Card - Left */}
             <div className="absolute left-2 top-32 bg-white rounded-md p-1.5 shadow-2xl w-24 z-20 border border-gray-100">
