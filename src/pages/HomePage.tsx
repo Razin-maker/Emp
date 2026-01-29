@@ -3,6 +3,8 @@ import { Hero } from '../components/nearo/Hero';
 import { ProblemSection } from '../components/nearo/ProblemSection';
 import { MeetEMPSection } from '../components/nearo/MeetEMPSection';
 import { FeatureGrid } from '../components/nearo/FeatureGrid';
+import { LiveRequestFlow } from '../components/nearo/LiveRequestFlow';
+import { OrganizationCalendar } from '../components/nearo/OrganizationCalendar';
 import { StepsSection } from '../components/nearo/StepsSection';
 import { WhoSection } from '../components/nearo/WhoSection';
 import { ManifestoSection } from '../components/nearo/ManifestoSection';
@@ -16,6 +18,8 @@ export const HomePage = () => {
             <ProblemSection />
             <MeetEMPSection />
             <FeatureGrid />
+            <LiveRequestFlow />
+            <OrganizationCalendar />
             <StepsSection />
             <WhoSection />
             <ManifestoSection />

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoImage from '../../assets/EMP_Logo_1-removebg-preview.png';
 
 export const Hero = () => {
     const [isAlternate, setIsAlternate] = useState(false);
@@ -22,10 +23,7 @@ export const Hero = () => {
                 }}
             >
                 <div className={`absolute ${isMobile ? 'left-4 top-4' : 'left-[80px] top-6'} z-10 flex items-center gap-2`}>
-                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-white font-bold border border-white/30 backdrop-blur-sm">
-                        😊
-                    </div>
-                    <span className="text-xl font-bold tracking-tight text-white">EMP</span>
+                    <img src={logoImage} alt="EMP Logo" className={`${isMobile ? 'h-8' : 'h-10'}`} />
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10">

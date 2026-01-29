@@ -1,26 +1,30 @@
 import { motion } from 'framer-motion';
+import illustrationImage from '../../assets/man 2.png';
+import manageImage from '../../assets/manage.png';
+import hrImage from '../../assets/HR.png';
+import employeeImage from '../../assets/Employee.png';
 
 export const WhoSection = () => {
     const audiences = [
         {
-            icon: "🎯",
             title: "Founders & Leadership",
-            description: "Understand how the organization is executing — without micromanagement."
+            description: "Understand how the organization is executing — without micromanagement.",
+            image: illustrationImage
         },
         {
-            icon: "👥",
             title: "Managers & Team Leads",
-            description: "See progress, blockers, and ownership in real time."
+            description: "See progress, blockers, and ownership in real time.",
+            image: manageImage
         },
         {
-            icon: "📋",
             title: "HR & Operations",
-            description: "Run people processes with consistency, fairness, and visibility."
+            description: "Run people processes with consistency, fairness, and visibility.",
+            image: hrImage
         },
         {
-            icon: "💼",
             title: "Employees",
-            description: "Know exactly what's expected and how work is evaluated."
+            description: "Know exactly what's expected and how work is evaluated.",
+            image: employeeImage
         }
     ];
 
@@ -46,12 +50,15 @@ export const WhoSection = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            whileHover={{ scale: 1.05, y: -8 }}
-                            className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow"
+                            className="bg-white rounded-2xl p-8 shadow-md flex flex-col h-[380px] overflow-hidden"
                         >
-                            <div className="text-4xl mb-4">{audience.icon}</div>
-                            <h3 className="text-[20px] font-semibold mb-3 text-slate-900">{audience.title}</h3>
-                            <p className="text-[16px] text-gray-600 leading-relaxed">{audience.description}</p>
+                            <div className="-mt-4">
+                                <h3 className="text-[18px] font-semibold mb-2 text-slate-900">{audience.title}</h3>
+                                <p className="text-[14px] text-gray-600 leading-relaxed mb-4">{audience.description}</p>
+                            </div>
+                            <div className={`flex justify-center ${index === 0 ? '-mt-4' : 'mt-auto pt-8'}`}>
+                                <img src={audience.image} alt="illustration" className="w-66 h-auto" />
+                            </div>
                         </motion.div>
                     ))}
                 </div>

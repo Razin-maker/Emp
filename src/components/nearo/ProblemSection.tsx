@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import logoImage from '../../assets/EMP_Logo_1-removebg-preview.png';
 
 export const ProblemSection = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -88,14 +89,14 @@ const ProblemSectionDesktop = () => {
                                     rotate: [0, 5, -5, 0]
                                 }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="relative w-64 h-64 rounded-3xl flex flex-col items-center justify-center shadow-2xl"
+                                className="relative w-52 h-52 rounded-3xl flex flex-col items-center justify-center shadow-2xl"
                                 style={{ 
-                                    background: '#4c9fd7',
-                                    boxShadow: '0 25px 50px -12px rgba(76, 159, 215, 0.5)'
+                                    background: '#c3e3f9',
+                                    boxShadow: '0 25px 50px -12px rgba(195, 227, 249, 0.5)'
                                 }}
                             >
-                                <div className="text-white text-6xl font-bold tracking-wide drop-shadow-lg">EMP</div>
-                                <div className="absolute -inset-4 bg-blue-400 rounded-3xl blur-xl opacity-30 -z-10"></div>
+                                <img src={logoImage} alt="EMP Logo" className="w-40 h-auto" />
+                                <div className="absolute -inset-4 rounded-3xl blur-xl opacity-30 -z-10" style={{ background: '#c3e3f9' }}></div>
                             </motion.div>
                         </div>
 
@@ -220,12 +221,12 @@ const ProblemSectionMobile = () => {
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                 className="relative w-12 h-12 rounded-lg flex flex-col items-center justify-center shadow-xl"
                                 style={{ 
-                                    background: '#4c9fd7',
-                                    boxShadow: '0 25px 50px -12px rgba(76, 159, 215, 0.5)'
+                                    background: '#c3e3f9',
+                                    boxShadow: '0 25px 50px -12px rgba(195, 227, 249, 0.5)'
                                 }}
                             >
-                                <div className="text-white text-base font-bold tracking-wide drop-shadow-lg">EMP</div>
-                                <div className="absolute -inset-2 bg-blue-400 rounded-lg blur-lg opacity-30 -z-10"></div>
+                                <img src={logoImage} alt="EMP Logo" className="w-10 h-auto" />
+                                <div className="absolute -inset-2 rounded-lg blur-lg opacity-30 -z-10" style={{ background: '#c3e3f9' }}></div>
                             </motion.div>
                         </div>
 
