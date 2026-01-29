@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import taskImage from '../../assets/task.png';
-import dashboardImage from '../../assets/dashboard.png';
-import sopImage from '../../assets/rules.png';
-import kpiImage from '../../assets/acc.png';
+import dashboardImage from '../../assets/dashboard2.png';
+import sopImage from '../../assets/Company rules.png';
+import kpiImage from '../../assets/goals.png';
 import hrImage from '../../assets/IMG_8505.PNG?url';
 import communicationImage from '../../assets/IMG_3341.JPG.jpeg';
 

@@ -1,4 +1,4 @@
-import { Bot } from "lucide-react";
+import logoImage from '../assets/WhatsApp_Image_2026-01-29_at_18.41.21-removebg-preview.png';
 
 export const Footer = () => {
     return (
@@ -6,9 +6,7 @@ export const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
 
                 <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue font-bold">
-                        <Bot size={20} />
-                    </div>
+                    <img src={logoImage} alt="EMP Logo" className="h-8 w-8 object-contain" />
                     <span className="text-lg font-semibold text-brand-dark">Nearo</span>
                 </div>
 

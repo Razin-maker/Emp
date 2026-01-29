@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import githubLogo from '../../assets/GitHub-Logo.wine.svg';
-import gmailLogo from '../../assets/Gmail-Logo.wine.png';
+import emailIcon from '../../assets/mail-icon-free-vector.jpg';
 import facebookLogo from '../../assets/Facebook-f_Logo-Blue-Logo.wine.svg';
 
 export const ContactUs = () => {
@@ -107,7 +107,7 @@ export const ContactUs = () => {
                         >
                             <div className="flex items-start gap-4">
                                 <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
-                                    <img src={gmailLogo} alt="Gmail" className="w-10 h-10" />
+                                    <img src={emailIcon} alt="Email" className="w-12 h-12 object-contain mix-blend-multiply" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-2 text-slate-900">Email</h3>

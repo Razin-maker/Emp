@@ -50,7 +50,7 @@ export const OrganizationCalendar = () => {
                     </div>
 
                     {/* Calendar Grid */}
-                    <div className="max-w-[450px] mx-auto mb-6">
+                    <div className="mb-6">
                         <div className="grid grid-cols-7 gap-1 mb-1">
                             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
                                 <div key={day} className="text-center text-xs font-medium text-gray-500 py-1">
@@ -86,7 +86,7 @@ export const OrganizationCalendar = () => {
                     </div>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-4 gap-3 max-w-[450px] mx-auto">
+                    <div className="grid grid-cols-4 gap-3">
                         {[
                             { number: '1', label: 'Holidays This Month' },
                             { number: '2', label: 'Team Absences' },

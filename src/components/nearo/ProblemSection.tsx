@@ -1,6 +1,61 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import logoImage from '../../assets/EMP_Logo_1-removebg-preview.png';
+import { AlertTriangle, Check, Cpu, Database, GitBranch, Layers, MessageSquare, Shield, Users, Workflow } from 'lucide-react';
+import logoImage from '../../assets/WhatsApp_Image_2026-01-29_at_18.41.21-removebg-preview.png';
+
+const BeforePoints = [
+  { icon: MessageSquare, text: "Work scattered across chats, sheets, and tools that don't sync" },
+  { icon: AlertTriangle, text: "Execution depends on memory, follow-ups, and reminders" },
+  { icon: Users, text: "Managers rely on status meetings instead of real signals" },
+  { icon: Database, text: "HR becomes manual tracking instead of structured systems" },
+  { icon: GitBranch, text: "Rules exist only in documents, not in daily behavior" }
+];
+
+const AfterPoints = [
+  { icon: Layers, text: "Tasks, planners, issues, and approvals live in one system" },
+  { icon: Cpu, text: "Real-time execution visibility replaces status chasing" },
+  { icon: Shield, text: "HR processes become traceable, auditable, and predictable" },
+  { icon: Check, text: "Every task has ownership, state, and history" },
+  { icon: Workflow, text: "Rules, SOPs, and workflows are enforced by the system — not people" }
+];
+
+const AnimatedWire = ({ direction }: { direction: "left" | "right" }) => {
+  const isLeft = direction === "left";
+  
+  return (
+    <div className="absolute inset-0 flex items-center">
+      <svg className="w-full h-16" viewBox="0 0 100 40" preserveAspectRatio="none">
+        <path
+          d="M0 20 Q 25 20, 50 20 T 100 20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className={isLeft ? "text-orange-300" : "text-green-300"}
+          strokeDasharray="4 6"
+          style={{ 
+            animation: isLeft ? "wireDash 1s linear infinite" : "wireDash 1s linear infinite reverse"
+          }}
+        />
+      </svg>
+      
+      {[0, 1, 2].map((i) => (
+        <div
+          key={i}
+          className="absolute h-3 w-3 rounded-full"
+          style={{
+            background: isLeft ? "#50a7e3" : "#10b981",
+            boxShadow: isLeft ? "0 0 10px rgba(80, 167, 227, 0.6)" : "0 0 10px rgba(16, 185, 129, 0.6)",
+            left: "0%",
+            top: "50%",
+            transform: "translateY(-50%)",
+            animation: `moveRight 2.5s ease-in-out infinite`,
+            animationDelay: `${i * 0.8}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 export const ProblemSection = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -16,262 +71,218 @@ export const ProblemSection = () => {
 };
 
 const ProblemSectionDesktop = () => {
-    const beforeProblems = [
-        "Work lives in chats, sheets, and tools that don't talk to each other",
-        "Managers can't see what's actually moving",
-        "HR turns into paperwork instead of people",
-        "Tasks get lost, ownership stays unclear",
-        "Rules exist, but no one consistently follows them"
-    ];
-
-    const afterSolutions = [
-        "Tasks, planners, and issues live in one place",
-        "Real-time visibility into execution and progress",
-        "HR processes are structured and traceable",
-        "Every task has clear ownership and status",
-        "Rules, SOPs, and approvals are enforced by the system"
-    ];
-
     return (
-        <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
-            {/* Background decorative circles */}
-            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-            
-            <div className="max-w-[1400px] mx-auto relative z-10">
-                <div className="text-center mb-20">
+        <section className="py-32 px-6 bg-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-[clamp(1.75rem,4vw,3.5rem)] font-bold mb-6 text-slate-900 leading-tight px-4">
-                            Teams Don't Fail Because of People.<br />They Fail Because of Chaos.
+                        <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold mb-4 text-slate-900">
+                            Teams Don't Fail Because of People.<br />
+                            <span className="text-[#50a7e3]">They Fail Because Systems Are Missing.</span>
                         </h2>
+                        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                            EMP replaces human coordination with enforceable, transparent systems.
+                        </p>
                     </motion.div>
                 </div>
 
                 <div className="relative">
-                    <div className="flex items-center justify-between gap-12">
-                        {/* Before - Left Side */}
-                        <div className="max-w-[420px] space-y-5">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl px-8 py-4 mb-8 shadow-lg inline-block border border-red-100"
-                            >
-                                <p className="text-lg font-bold text-slate-900">
-                                    Before EMP <span className="text-2xl">😟</span>
-                                </p>
-                            </motion.div>
-                            {beforeProblems.map((problem, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1, type: "spring" }}
-                                    whileHover={{ scale: 1.05, x: 10 }}
-                                >
-                                    <div className="bg-white border-2 border-red-300 rounded-2xl px-6 py-4 text-[15px] text-red-700 font-medium shadow-lg hover:shadow-xl transition-all inline-block">
-                                        {problem}
-                                    </div>
-                                </motion.div>
-                            ))}
+                    <div className="grid grid-cols-[1fr,auto,1fr] gap-0">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="rounded-2xl rounded-r-none border border-gray-200 bg-white p-8"
+                        >
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
+                                    <AlertTriangle className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-orange-600">BEFORE EMP</h3>
+                                    <p className="text-xs text-gray-500">Reactive • Manual • Fragmented</p>
+                                </div>
+                            </div>
+                            <ul className="space-y-5">
+                                {BeforePoints.map((point, index) => (
+                                    <li key={index} className="flex items-start gap-4 group">
+                                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-orange-200 bg-orange-50 text-orange-600 transition-colors group-hover:border-orange-300 group-hover:bg-orange-100">
+                                            <point.icon className="h-4 w-4" />
+                                        </div>
+                                        <p className="text-sm leading-relaxed text-gray-700">{point.text}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+
+                        <div className="relative flex flex-col items-center justify-center px-4">
+                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-16 overflow-hidden">
+                                <AnimatedWire direction="left" />
+                            </div>
+                            
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-16 overflow-hidden">
+                                <AnimatedWire direction="right" />
+                            </div>
+
+                            <div className="relative z-10 inline-flex items-center rounded-full border-2 border-[#50a7e3]/40 bg-[#50a7e3] p-4 shadow-lg">
+                                <img src={logoImage} alt="EMP Logo" className="h-20 w-20 object-contain" />
+                                <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-yellow-400">
+                                    <div className="absolute inset-0 h-3 w-3 rounded-full bg-yellow-400 animate-ping" style={{ animationDuration: "2s" }} />
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Center - Logo */}
-                        <div className="relative flex-shrink-0 mx-8">
-                            <motion.div
-                                animate={{ 
-                                    scale: [1, 1.05, 1],
-                                    rotate: [0, 5, -5, 0]
-                                }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="relative w-52 h-52 rounded-3xl flex flex-col items-center justify-center shadow-2xl"
-                                style={{ 
-                                    background: '#50a7e3',
-                                    boxShadow: '0 25px 50px -12px rgba(80, 167, 227, 0.5)'
-                                }}
-                            >
-                                <img src={logoImage} alt="EMP Logo" className="w-40 h-auto brightness-0 invert" />
-                                <div className="absolute -inset-4 rounded-3xl blur-xl opacity-30 -z-10" style={{ background: '#50a7e3' }}></div>
-                            </motion.div>
-                        </div>
-
-                        {/* After - Right Side */}
-                        <div className="max-w-[420px] space-y-5">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl px-8 py-4 mb-8 shadow-lg inline-block float-right border border-green-100"
-                            >
-                                <p className="text-lg font-bold text-slate-900">
-                                    <span className="text-2xl">😊</span> After EMP
-                                </p>
-                            </motion.div>
-                            <div className="clear-both"></div>
-                            {afterSolutions.map((solution, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: 30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1, type: "spring" }}
-                                    whileHover={{ scale: 1.05, x: -10 }}
-                                    className="text-right"
-                                >
-                                    <div className="bg-white border-2 border-green-300 rounded-2xl px-6 py-4 text-[15px] text-green-700 font-medium shadow-lg hover:shadow-xl transition-all inline-block">
-                                        {solution}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="rounded-2xl rounded-l-none border border-gray-200 bg-white p-8"
+                        >
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50 text-green-600">
+                                    <Check className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-green-600">AFTER EMP</h3>
+                                    <p className="text-xs text-gray-500">Deterministic • Auditable • Connected</p>
+                                </div>
+                            </div>
+                            <ul className="space-y-5">
+                                {AfterPoints.map((point, index) => (
+                                    <li key={index} className="flex items-start gap-4 group">
+                                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-green-200 bg-green-50 text-green-600 transition-colors group-hover:border-green-300 group-hover:bg-green-100">
+                                            <point.icon className="h-4 w-4" />
+                                        </div>
+                                        <p className="text-sm leading-relaxed text-gray-700">{point.text}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
                     </div>
                 </div>
 
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mt-24 px-4"
-                >
-                    <div className="inline-block bg-gradient-to-r from-slate-900 to-slate-700 px-10 py-5 rounded-full shadow-2xl">
-                        <p className="text-[20px] font-semibold text-white">
-                            When everything is fragmented, execution breaks.
-                        </p>
-                    </div>
-                </motion.div>
+
             </div>
         </section>
     );
 };
 
 const ProblemSectionMobile = () => {
-    const beforeProblems = [
-        "Work lives in chats, sheets, and tools that don't talk to each other",
-        "Managers can't see what's actually moving",
-        "HR turns into paperwork instead of people",
-        "Tasks get lost, ownership stays unclear",
-        "Rules exist, but no one consistently follows them"
-    ];
-
-    const afterSolutions = [
-        "Tasks, planners, and issues live in one place",
-        "Real-time visibility into execution and progress",
-        "HR processes are structured and traceable",
-        "Every task has clear ownership and status",
-        "Rules, SOPs, and approvals are enforced by the system"
-    ];
-
     return (
-        <section className="py-16 px-2 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
-            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
-            
-            <div className="max-w-[1400px] mx-auto relative z-10">
-                <div className="text-center mb-8">
+        <section className="py-16 px-4 bg-white relative overflow-hidden">
+            <div className="max-w-md mx-auto relative z-10">
+                <div className="text-center mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-[1.5rem] font-bold mb-3 text-slate-900 leading-tight px-2">
-                            Teams Don't Fail Because of People.<br />They Fail Because of Chaos.
+                        <h2 className="text-2xl font-semibold mb-3 text-slate-900 leading-tight">
+                            Teams Don't Fail Because of People.<br />
+                            <span className="text-[#50a7e3]">They Fail Because Systems Are Missing.</span>
                         </h2>
+                        <p className="text-gray-600 text-sm mt-4">
+                            EMP replaces human coordination with enforceable, transparent systems.
+                        </p>
                     </motion.div>
                 </div>
 
-                <div className="relative">
-                    <div className="flex items-start justify-between gap-2">
-                        <div className="flex-1 space-y-2">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-br from-red-50 to-orange-50 rounded-lg px-2 py-1 mb-2 shadow-md inline-block border border-red-100"
-                            >
-                                <p className="text-[10px] font-bold text-slate-900">
-                                    Before <span className="text-xs">😟</span>
-                                </p>
-                            </motion.div>
-                            {beforeProblems.map((problem, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1, type: "spring" }}
-                                >
-                                    <div className="bg-white border border-red-300 rounded-lg px-2 py-1 text-[8px] text-red-700 font-medium shadow-md inline-block">
-                                        {problem}
+                <div className="space-y-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="rounded-2xl border border-gray-200 bg-white p-6"
+                    >
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
+                                <AlertTriangle className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-semibold uppercase tracking-wider text-orange-600">BEFORE EMP</h3>
+                                <p className="text-xs text-gray-500">Reactive • Manual • Fragmented</p>
+                            </div>
+                        </div>
+                        <ul className="space-y-4">
+                            {BeforePoints.map((point, index) => (
+                                <li key={index} className="flex items-start gap-3">
+                                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-orange-200 bg-orange-50 text-orange-600">
+                                        <point.icon className="h-3.5 w-3.5" />
                                     </div>
-                                </motion.div>
+                                    <p className="text-xs leading-relaxed text-gray-700">{point.text}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+
+                    <div className="flex items-center justify-center py-4">
+                        <div className="flex flex-col items-center gap-2">
+                            {[0, 1, 2].map((i) => (
+                                <div
+                                    key={i}
+                                    className="h-2 w-2 rounded-full bg-[#50a7e3]"
+                                    style={{
+                                        animation: "pulseSlow 1.5s ease-in-out infinite",
+                                        animationDelay: `${i * 0.3}s`,
+                                    }}
+                                />
                             ))}
                         </div>
-
-                        <div className="relative flex-shrink-0 mx-1 mt-28">
-                            <motion.div
-                                animate={{ 
-                                    scale: [1, 1.05, 1],
-                                    rotate: [0, 5, -5, 0]
-                                }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="relative w-12 h-12 rounded-lg flex flex-col items-center justify-center shadow-xl"
-                                style={{ 
-                                    background: '#50a7e3',
-                                    boxShadow: '0 25px 50px -12px rgba(80, 167, 227, 0.5)'
-                                }}
-                            >
-                                <img src={logoImage} alt="EMP Logo" className="w-10 h-auto brightness-0 invert" />
-                                <div className="absolute -inset-2 rounded-lg blur-lg opacity-30 -z-10" style={{ background: '#50a7e3' }}></div>
-                            </motion.div>
+                        
+                        <div className="relative mx-4 inline-flex items-center rounded-full border-2 border-[#50a7e3]/40 bg-[#50a7e3] p-2.5 shadow-lg">
+                            <img src={logoImage} alt="EMP Logo" className="h-14 w-14 object-contain" />
+                            <div className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-yellow-400">
+                                <div className="absolute inset-0 h-2.5 w-2.5 rounded-full bg-yellow-400 animate-ping" style={{ animationDuration: "2s" }} />
+                            </div>
                         </div>
-
-                        <div className="flex-1 space-y-2">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg px-2 py-1 mb-2 shadow-md inline-block float-right border border-green-100"
-                            >
-                                <p className="text-[10px] font-bold text-slate-900">
-                                    <span className="text-xs">😊</span> After
-                                </p>
-                            </motion.div>
-                            <div className="clear-both"></div>
-                            {afterSolutions.map((solution, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: 30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1, type: "spring" }}
-                                    className="text-right"
-                                >
-                                    <div className="bg-white border border-green-300 rounded-lg px-2 py-1 text-[8px] text-green-700 font-medium shadow-md inline-block">
-                                        {solution}
-                                    </div>
-                                </motion.div>
+                        
+                        <div className="flex flex-col items-center gap-2">
+                            {[0, 1, 2].map((i) => (
+                                <div
+                                    key={i}
+                                    className="h-2 w-2 rounded-full bg-green-500"
+                                    style={{
+                                        animation: "pulseSlow 1.5s ease-in-out infinite",
+                                        animationDelay: `${i * 0.3}s`,
+                                    }}
+                                />
                             ))}
                         </div>
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="rounded-2xl border border-gray-200 bg-white p-6"
+                    >
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50 text-green-600">
+                                <Check className="h-5 w-5" />
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-semibold uppercase tracking-wider text-green-600">AFTER EMP</h3>
+                                <p className="text-xs text-gray-500">Deterministic • Auditable • Connected</p>
+                            </div>
+                        </div>
+                        <ul className="space-y-4">
+                            {AfterPoints.map((point, index) => (
+                                <li key={index} className="flex items-start gap-3">
+                                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-green-200 bg-green-50 text-green-600">
+                                        <point.icon className="h-3.5 w-3.5" />
+                                    </div>
+                                    <p className="text-xs leading-relaxed text-gray-700">{point.text}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
                 </div>
 
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mt-8"
-                >
-                    <div className="inline-block bg-gradient-to-r from-slate-900 to-slate-700 px-4 py-2 rounded-full shadow-xl">
-                        <p className="text-[10px] font-semibold text-white">
-                            When everything is fragmented, execution breaks.
-                        </p>
-                    </div>
-                </motion.div>
+
             </div>
         </section>
     );

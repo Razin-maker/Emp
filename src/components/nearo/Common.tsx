@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '../../lib/utils'; // Ensure cn is imported if used, otherwise remove it
-import logoImage from '../../assets/EMP_Logo_1-removebg-preview.png';
+import logoImage from '../../assets/WhatsApp_Image_2026-01-29_at_18.41.21-removebg-preview.png';
 import sohubLogo from '../../assets/ace41ae7-2ae1-4476-85cf-1d1637a02cb0.png';
 
 export const Testimonials = () => {
@@ -31,10 +31,10 @@ export const Testimonials = () => {
 export const Footer = () => {
     return (
         <footer className="bg-[#050505] text-white py-8 px-6">
-            <div className="max-w-7xl mx-auto flex justify-between items-start gap-8">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
                 <div>
                     <div className="flex items-center gap-2 mb-4">
-                        <img src={logoImage} alt="EMP Logo" className="h-10 brightness-0 invert" />
+                        <img src={logoImage} alt="EMP Logo" className="h-24" />
                     </div>
                     <p className="text-gray-500 max-w-sm mb-2">
                         Open Source Execution Management Platform
@@ -53,11 +53,11 @@ export const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className="max-w-7xl mx-auto mt-8 pt-4 border-t border-gray-900 flex items-center justify-between text-gray-600">
-                <div>© 2025 EMP Open Source Project</div>
-                <a href="https://sohub.com.bd/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gray-400 transition-colors">
+            <div className="max-w-7xl mx-auto mt-8 pt-4 border-t border-gray-900 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-600 text-sm">
+                <div className="text-center md:text-left">© 2025 EMP Open Source Project</div>
+                <a href="https://sohub.com.bd/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gray-400 transition-colors text-center md:text-left">
                     <img src={sohubLogo} alt="SOHUB" className="h-6 brightness-0 invert" />
-                    <span>Solution Hub Technologies (SOHUB) Owned & Operated</span>
+                    <span className="text-xs md:text-sm">Solution Hub Technologies (SOHUB) Owned & Operated</span>
                 </a>
             </div>
         </footer>
