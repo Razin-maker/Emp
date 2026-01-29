@@ -15,7 +15,7 @@ export const ContactUs = () => {
         setStatus('');
 
         try {
-            const response = await fetch('https://yourdomain.com/send-email.php', {
+            const response = await fetch('https://emp.sohub.com.bd/send-email.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -172,7 +172,7 @@ export const ContactUs = () => {
                                 ></textarea>
                             </div>
                             {status && (
-                                <div className={`text-sm ${status.includes('success') ? 'text-green-600' : 'text-red-600'}`}>
+                                <div className={`text-sm font-medium ${status.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
                                     {status}
                                 </div>
                             )}
