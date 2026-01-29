@@ -31,10 +31,10 @@ export const Testimonials = () => {
 export const Footer = () => {
     return (
         <footer className="bg-[#050505] text-white py-8 px-6">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-start gap-8">
                 <div>
-                    <div className="flex items-center gap-2 mb-4">
-                        <img src={logoImage} alt="EMP Logo" className="h-24" />
+                    <div className="flex items-center gap-2 mb-4 -mt-8 -ml-8 md:ml-0">
+                        <img src={logoImage} alt="EMP Logo" className="h-40" />
                     </div>
                     <p className="text-gray-500 max-w-sm mb-2">
                         Open Source Execution Management Platform

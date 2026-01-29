@@ -128,8 +128,8 @@ const ProblemSectionDesktop = () => {
                                 <AnimatedWire direction="right" />
                             </div>
 
-                            <div className="relative z-10 inline-flex items-center rounded-full border-2 border-[#50a7e3]/40 bg-[#50a7e3] p-4 shadow-lg">
-                                <img src={logoImage} alt="EMP Logo" className="h-20 w-20 object-contain" />
+                            <div className="relative z-10 inline-flex items-center rounded-full border-2 border-[#50a7e3]/40 bg-[#50a7e3] p-4 shadow-lg overflow-visible">
+                                <img src={logoImage} alt="EMP Logo" className="h-32 w-32 object-contain scale-150" />
                                 <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-yellow-400">
                                     <div className="absolute inset-0 h-3 w-3 rounded-full bg-yellow-400 animate-ping" style={{ animationDuration: "2s" }} />
                                 </div>
@@ -233,8 +233,8 @@ const ProblemSectionMobile = () => {
                             ))}
                         </div>
                         
-                        <div className="relative mx-4 inline-flex items-center rounded-full border-2 border-[#50a7e3]/40 bg-[#50a7e3] p-2.5 shadow-lg">
-                            <img src={logoImage} alt="EMP Logo" className="h-14 w-14 object-contain" />
+                        <div className="relative mx-4 inline-flex items-center rounded-full border-2 border-[#50a7e3]/40 bg-[#50a7e3] p-2.5 shadow-lg overflow-visible">
+                            <img src={logoImage} alt="EMP Logo" className="h-24 w-24 object-contain scale-150" />
                             <div className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-yellow-400">
                                 <div className="absolute inset-0 h-2.5 w-2.5 rounded-full bg-yellow-400 animate-ping" style={{ animationDuration: "2s" }} />
                             </div>

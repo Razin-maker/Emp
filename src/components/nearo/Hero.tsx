@@ -22,8 +22,8 @@ export const Hero = () => {
                     minHeight: isMobile ? '100vh' : 'calc(160vh - 37px)'
                 }}
             >
-                <div className={`absolute ${isMobile ? 'left-4 top-4' : 'left-[20px] top-[10px]'} z-10 flex items-center gap-2`}>
-                    <img src={logoImage} alt="EMP Logo" className={`${isMobile ? 'h-14' : 'h-32'}`} />
+                <div className={`absolute ${isMobile ? 'left-2 -top-2' : 'left-[20px] -top-4'} z-10 flex items-center gap-2`}>
+                    <img src={logoImage} alt="EMP Logo" className={`${isMobile ? 'h-20' : 'h-40'}`} />
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -50,7 +50,7 @@ const HeroVariant1 = () => (
         </h1>
 
         <p className="text-[clamp(1rem,2vw,1.25rem)] text-white/80 mb-10 max-w-3xl font-normal">
-            EMP is a Business Operating System that transfers operational responsibility from people to systems—driving clarity, accountability, and scalable execution across teams.
+            EMP transfers operational responsibility from people to systems—<br />driving clarity, accountability, and scalable execution.
         </p>
 
         <div className="flex items-center gap-4 mb-20">
@@ -78,7 +78,7 @@ const HeroVariant1 = () => (
                         </svg>
                     </div>
                     <div className="flex-1">
-                        <h3 className="font-bold text-gray-900 mb-1.5 text-lg">Wireframe Homepage</h3>
+                        <h3 className="font-bold text-gray-900 mb-1.5 text-lg">Website Homepage</h3>
                         <p className="text-sm text-gray-500 mb-3">Tanvir</p>
                         <span className="inline-block bg-red-50 text-red-600 text-xs px-2.5 py-1 rounded-full font-medium">● High Priority</span>
                     </div>
@@ -173,7 +173,7 @@ const HeroVariant1 = () => (
                                     <div className="flex items-center justify-between gap-3">
                                         <div className="flex items-center gap-3">
                                             <div className="w-6 h-6 rounded-full border-2 border-gray-300 flex-shrink-0"></div>
-                                            <h3 className="font-medium text-gray-500">Wireframe Homepage</h3>
+                                            <h3 className="font-medium text-gray-500">Website Homepage</h3>
                                         </div>
                                         <span className="text-xs text-gray-400">Feb 20</span>
                                     </div>
@@ -202,7 +202,7 @@ const HeroVariantMobile = () => (
         </h1>
 
         <p className="text-[0.9rem] text-white/80 mb-8 max-w-2xl font-normal px-4">
-            EMP is a Business Operating System that transfers operational responsibility from people to systems—driving clarity, accountability, and scalable execution across teams.
+            EMP transfers operational responsibility<br />from people to systems—driving clarity,<br />accountability, and execution.
         </p>
 
         <div className="flex flex-col items-center gap-3 mb-24 w-full px-4">
@@ -230,7 +230,7 @@ const HeroVariantMobile = () => (
                         </svg>
                     </div>
                     <div className="flex-1">
-                        <h3 className="font-bold text-gray-900 mb-0.5 text-[8px] leading-tight">Wireframe Homepage</h3>
+                        <h3 className="font-bold text-gray-900 mb-0.5 text-[8px] leading-tight">Website Homepage</h3>
                         <p className="text-[7px] text-gray-500 mb-0.5">Tanvir</p>
                         <span className="inline-block bg-red-50 text-red-600 text-[6px] px-1 py-0.5 rounded-full font-medium">● High</span>
                     </div>
@@ -309,7 +309,7 @@ const HeroVariantMobile = () => (
                                     <div className="flex items-center justify-between gap-1.5">
                                         <div className="flex items-center gap-1.5">
                                             <div className="w-3.5 h-3.5 rounded-full border-2 border-gray-300 flex-shrink-0"></div>
-                                            <h3 className="text-[10px] font-medium text-gray-500">Wireframe Homepage</h3>
+                                            <h3 className="text-[10px] font-medium text-gray-500">Website Homepage</h3>
                                         </div>
                                         <span className="text-[8px] text-gray-400">Feb 20</span>
                                     </div>
