@@ -1,9 +1,40 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import githubLogo from '../../assets/GitHub-Logo.wine.svg';
 import gmailLogo from '../../assets/Gmail-Logo.wine.png';
 import facebookLogo from '../../assets/Facebook-f_Logo-Blue-Logo.wine.svg';
 
 export const ContactUs = () => {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [status, setStatus] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus('');
+
+        try {
+            const response = await fetch('https://yourdomain.com/send-email.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+            
+            if (data.success) {
+                setStatus('Message sent successfully!');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setStatus('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            setStatus('An error occurred. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
     return (
         <section id="contact" className="py-32 px-6 bg-white">
             <div className="max-w-6xl mx-auto">
@@ -97,7 +128,7 @@ export const ContactUs = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="bg-gray-50 rounded-2xl p-8"
                     >
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                                     Name
@@ -105,7 +136,10 @@ export const ContactUs = () => {
                                 <input
                                     type="text"
                                     id="name"
+                                    value={formData.name}
+                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     placeholder="Your name"
+                                    required
                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#50a7e3] focus:border-transparent outline-none transition-all"
                                 />
                             </div>
@@ -116,7 +150,10 @@ export const ContactUs = () => {
                                 <input
                                     type="email"
                                     id="email"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     placeholder="your@email.com"
+                                    required
                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#50a7e3] focus:border-transparent outline-none transition-all"
                                 />
                             </div>
@@ -127,18 +164,27 @@ export const ContactUs = () => {
                                 <textarea
                                     id="message"
                                     rows={5}
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                     placeholder="Tell us about your project or question..."
+                                    required
                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#50a7e3] focus:border-transparent outline-none transition-all resize-none"
                                 ></textarea>
                             </div>
+                            {status && (
+                                <div className={`text-sm ${status.includes('success') ? 'text-green-600' : 'text-red-600'}`}>
+                                    {status}
+                                </div>
+                            )}
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 type="submit"
-                                className="w-full py-3 rounded-lg text-white font-medium transition-colors"
+                                disabled={loading}
+                                className="w-full py-3 rounded-lg text-white font-medium transition-colors disabled:opacity-50"
                                 style={{ backgroundColor: '#50a7e3' }}
                             >
-                                Send Message
+                                {loading ? 'Sending...' : 'Send Message'}
                             </motion.button>
                         </form>
                     </motion.div>
