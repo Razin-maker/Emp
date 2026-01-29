@@ -82,7 +82,7 @@ const ProblemSectionDesktop = () => {
                     >
                         <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold mb-4 text-slate-900">
                             Teams Don't Fail Because of People.<br />
-                            <span className="text-[#50a7e3]">They Fail Because Systems Are Missing.</span>
+                            <span className="text-slate-900">They Fail Because Systems Are Missing.</span>
                         </h2>
                         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                             EMP replaces human coordination with enforceable, transparent systems.
@@ -183,7 +183,7 @@ const ProblemSectionMobile = () => {
                     >
                         <h2 className="text-2xl font-semibold mb-3 text-slate-900 leading-tight">
                             Teams Don't Fail Because of People.<br />
-                            <span className="text-[#50a7e3]">They Fail Because Systems Are Missing.</span>
+                            <span className="text-slate-900">They Fail Because Systems Are Missing.</span>
                         </h2>
                         <p className="text-gray-600 text-sm mt-4">
                             EMP replaces human coordination with enforceable, transparent systems.
