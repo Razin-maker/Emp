@@ -4,6 +4,8 @@ import taskImage from '../../assets/task.png';
 import dashboardImage from '../../assets/dashboard.png';
 import sopImage from '../../assets/rules.png';
 import kpiImage from '../../assets/acc.png';
+import hrImage from '../../assets/IMG_8505.PNG?url';
+import communicationImage from '../../assets/IMG_3341.JPG.jpeg';
 
 const features = [
     {
@@ -132,60 +134,8 @@ const FeatureCard = ({ index, icon, title, description, tagline, offset, image }
                                                 <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v2h10V4zm-3 18c.55 0 1-.45 1-1h-4c0 .55.45 1 1 1zm0-3c.55 0 1-.45 1-1H13c0 .55.45 1 1 1z" /></svg>
                                             </div>
                                         </div>
-                                        <div className="px-4 py-3 border-b border-gray-100">
-                                            <div className="flex items-center gap-2">
-                                                <div style={{ color: '#50a7e3' }} className="text-lg font-bold">EMP</div>
-                                                <button className="ml-auto">
-                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-                                                </button>
-                                            </div>
-                                        </div>
                                         <div className="px-4 py-3">
-                                            <div className="flex items-center gap-2 mb-3">
-                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/></svg>
-                                                <h3 className="text-sm font-semibold text-gray-900">Leave Management</h3>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <div className="bg-gray-50 rounded-lg p-2.5">
-                                                    <div className="flex items-center justify-between mb-1.5">
-                                                        <span className="text-xs font-medium text-gray-800">Md. Razin Ahmed</span>
-                                                        <span className="text-xs text-gray-500">(2 / 25)</span>
-                                                    </div>
-                                                    <div className="w-full bg-gray-200 rounded-full h-1.5">
-                                                        <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '8%' }}></div>
-                                                    </div>
-                                                </div>
-                                                <div className="bg-gray-50 rounded-lg p-2.5">
-                                                    <div className="flex items-center justify-between mb-1.5">
-                                                        <span className="text-xs font-medium text-gray-800">Tanvir Islam</span>
-                                                        <span className="text-xs text-gray-500">(3 / 25)</span>
-                                                    </div>
-                                                    <div className="w-full bg-gray-200 rounded-full h-1.5">
-                                                        <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '12%' }}></div>
-                                                    </div>
-                                                </div>
-                                                <div className="bg-gray-50 rounded-lg p-2.5">
-                                                    <div className="flex items-center justify-between mb-1.5">
-                                                        <span className="text-xs font-medium text-gray-800">Md. Moyed Muqtadir</span>
-                                                        <span className="text-xs text-gray-500">(5 / 25)</span>
-                                                    </div>
-                                                    <div className="w-full bg-gray-200 rounded-full h-1.5">
-                                                        <div className="bg-yellow-500 h-1.5 rounded-full" style={{ width: '20%' }}></div>
-                                                    </div>
-                                                </div>
-                                                <div className="bg-gray-50 rounded-lg p-2.5">
-                                                    <div className="flex items-center justify-between mb-1.5">
-                                                        <span className="text-xs font-medium text-gray-800">Md. Arifol Islam</span>
-                                                        <span className="text-xs text-gray-500">(1 / 25)</span>
-                                                    </div>
-                                                    <div className="flex items-center gap-2">
-                                                        <div className="flex-1 bg-gray-200 rounded-full h-1.5">
-                                                            <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '4%' }}></div>
-                                                        </div>
-                                                        <span className="inline-block bg-green-500 text-white text-[10px] px-1.5 py-0.5 rounded">Active</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <img src={hrImage} alt="HR Portal" className="w-full h-auto rounded-lg" />
                                         </div>
                                     </div>
                                 </div>
@@ -219,37 +169,8 @@ const FeatureCard = ({ index, icon, title, description, tagline, offset, image }
                                             <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17 4h-3V2h-4v2H7v2h10V4zm-3 18c.55 0 1-.45 1-1h-4c0 .55.45 1 1 1zm0-3c.55 0 1-.45 1-1H13c0 .55.45 1 1 1z" /></svg>
                                         </div>
                                     </div>
-                                    <div className="px-6 py-4">
-                                        <h2 className="text-2xl font-bold mb-4 text-gray-900">Activity Feed</h2>
-                                        <div className="space-y-3">
-                                            <div className="bg-white rounded-2xl p-3 shadow-sm">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-lg">🔔</div>
-                                                    <div>
-                                                        <p className="font-semibold text-sm text-gray-900">Notifications</p>
-                                                        <p className="text-xs text-gray-500">Real-time updates</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="bg-white rounded-2xl p-3 shadow-sm">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-lg">📋</div>
-                                                    <div>
-                                                        <p className="font-semibold text-sm text-gray-900">Activity Logs</p>
-                                                        <p className="text-xs text-gray-500">Track all changes</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="bg-white rounded-2xl p-3 shadow-sm">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-lg">✈️</div>
-                                                    <div>
-                                                        <p className="font-semibold text-sm text-gray-900">Telegram</p>
-                                                        <p className="text-xs text-gray-500">Instant integration</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div className="px-4 py-3">
+                                        <img src={communicationImage} alt="Communication" className="w-full h-auto rounded-lg" />
                                     </div>
                                 </div>
                             </div>

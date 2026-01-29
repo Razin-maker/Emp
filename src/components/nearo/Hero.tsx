@@ -23,7 +23,7 @@ export const Hero = () => {
                 }}
             >
                 <div className={`absolute ${isMobile ? 'left-4 top-4' : 'left-[80px] top-6'} z-10 flex items-center gap-2`}>
-                    <img src={logoImage} alt="EMP Logo" className={`${isMobile ? 'h-8' : 'h-10'}`} />
+                    <img src={logoImage} alt="EMP Logo" className={`${isMobile ? 'h-8' : 'h-10'} brightness-0 invert`} />
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -42,26 +42,21 @@ const HeroVariant1 = () => (
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center text-center pt-20"
+        className="flex flex-col items-center text-center pt-28"
         style={{ fontFamily: '"Inter", sans-serif' }}
     >
         <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] font-medium text-white mb-6 max-w-5xl leading-[1.2]" style={{ letterSpacing: '-0.06em' }}>
-            Work Needs Clarity.<br />Teams Need Execution.
+            Clarity. Accountability. Scalable Execution.
         </h1>
 
-        <p className="text-[clamp(1rem,2vw,1.25rem)] text-white/80 mb-4 max-w-2xl font-normal">
-            EMP is an open-source Execution Operating System that brings people, tasks, rules, and accountability into one clear, structured platform.
-        </p>
-
-        <p className="text-[clamp(0.875rem,1.5vw,1rem)] text-white/70 mb-10 max-w-2xl font-normal">
-            No more guessing. No more scattered tools. Just visible work and clear ownership.<br />
-            No license fees. No vendor lock-in. No hidden logic.
+        <p className="text-[clamp(1rem,2vw,1.25rem)] text-white/80 mb-10 max-w-3xl font-normal">
+            EMP is a Business Operating System that transfers operational responsibility from people to systems—driving clarity, accountability, and scalable execution across teams.
         </p>
 
         <div className="flex items-center gap-4 mb-20">
-            <button className="bg-white text-[#4A4A4A] px-8 py-4 rounded-full text-sm font-medium tracking-normal shadow-xl hover:bg-gray-50 transition-colors whitespace-nowrap">
+            <a href="https://github.com/Employee-Max-Portal" target="_blank" rel="noopener noreferrer" className="bg-white text-[#4A4A4A] px-8 py-4 rounded-full text-sm font-medium tracking-normal shadow-xl hover:bg-gray-50 transition-colors whitespace-nowrap">
                 Get EMP on GitHub
-            </button>
+            </a>
             <button className="bg-white/20 backdrop-blur-sm text-white border border-white/40 px-8 py-4 rounded-full text-sm font-medium tracking-normal hover:bg-white/30 transition-colors whitespace-nowrap">
                 See How EMP Works
             </button>
@@ -199,26 +194,21 @@ const HeroVariantMobile = () => (
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center text-center pt-16 px-4"
+        className="flex flex-col items-center text-center pt-20 px-4"
         style={{ fontFamily: '"Inter", sans-serif' }}
     >
         <h1 className="text-[2.3rem] font-medium text-white mb-4 max-w-5xl leading-[1.2] px-2" style={{ letterSpacing: '-0.06em' }}>
-            <span className="whitespace-nowrap">Work Needs Clarity.</span><br />Teams Need Execution.
+            Clarity. Accountability. Scalable Execution.
         </h1>
 
-        <p className="text-[0.9rem] text-white/80 mb-3 max-w-2xl font-normal px-4">
-            EMP is an open-source Execution Operating System that brings people, tasks, rules, and accountability into one clear, structured platform.
-        </p>
-
-        <p className="text-[0.8rem] text-white/70 mb-8 max-w-2xl font-normal px-4">
-            No more guessing. No more scattered tools. Just visible work and clear ownership.
-            No license fees. No vendor lock-in. No hidden logic.
+        <p className="text-[0.9rem] text-white/80 mb-8 max-w-2xl font-normal px-4">
+            EMP is a Business Operating System that transfers operational responsibility from people to systems—driving clarity, accountability, and scalable execution across teams.
         </p>
 
         <div className="flex flex-col items-center gap-3 mb-24 w-full px-4">
-            <button className="bg-white text-[#4A4A4A] px-6 py-3 rounded-full text-xs font-medium tracking-normal shadow-xl hover:bg-gray-50 transition-colors whitespace-nowrap w-full">
+            <a href="https://github.com/Employee-Max-Portal" target="_blank" rel="noopener noreferrer" className="bg-white text-[#4A4A4A] px-6 py-3 rounded-full text-xs font-medium tracking-normal shadow-xl hover:bg-gray-50 transition-colors whitespace-nowrap w-full text-center">
                 Get EMP on GitHub
-            </button>
+            </a>
             <button className="bg-white/20 backdrop-blur-sm text-white border border-white/40 px-6 py-3 rounded-full text-xs font-medium tracking-normal hover:bg-white/30 transition-colors whitespace-nowrap w-full">
                 See How EMP Works
             </button>

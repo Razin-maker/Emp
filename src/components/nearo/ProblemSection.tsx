@@ -91,12 +91,12 @@ const ProblemSectionDesktop = () => {
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                 className="relative w-52 h-52 rounded-3xl flex flex-col items-center justify-center shadow-2xl"
                                 style={{ 
-                                    background: '#c3e3f9',
-                                    boxShadow: '0 25px 50px -12px rgba(195, 227, 249, 0.5)'
+                                    background: '#50a7e3',
+                                    boxShadow: '0 25px 50px -12px rgba(80, 167, 227, 0.5)'
                                 }}
                             >
-                                <img src={logoImage} alt="EMP Logo" className="w-40 h-auto" />
-                                <div className="absolute -inset-4 rounded-3xl blur-xl opacity-30 -z-10" style={{ background: '#c3e3f9' }}></div>
+                                <img src={logoImage} alt="EMP Logo" className="w-40 h-auto brightness-0 invert" />
+                                <div className="absolute -inset-4 rounded-3xl blur-xl opacity-30 -z-10" style={{ background: '#50a7e3' }}></div>
                             </motion.div>
                         </div>
 
@@ -221,12 +221,12 @@ const ProblemSectionMobile = () => {
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                 className="relative w-12 h-12 rounded-lg flex flex-col items-center justify-center shadow-xl"
                                 style={{ 
-                                    background: '#c3e3f9',
-                                    boxShadow: '0 25px 50px -12px rgba(195, 227, 249, 0.5)'
+                                    background: '#50a7e3',
+                                    boxShadow: '0 25px 50px -12px rgba(80, 167, 227, 0.5)'
                                 }}
                             >
-                                <img src={logoImage} alt="EMP Logo" className="w-10 h-auto" />
-                                <div className="absolute -inset-2 rounded-lg blur-lg opacity-30 -z-10" style={{ background: '#c3e3f9' }}></div>
+                                <img src={logoImage} alt="EMP Logo" className="w-10 h-auto brightness-0 invert" />
+                                <div className="absolute -inset-2 rounded-lg blur-lg opacity-30 -z-10" style={{ background: '#50a7e3' }}></div>
                             </motion.div>
                         </div>
 

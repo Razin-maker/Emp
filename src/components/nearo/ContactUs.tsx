@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import githubLogo from '../../assets/GitHub-Logo.wine.svg';
+import gmailLogo from '../../assets/Gmail-Logo.wine.png';
+import facebookLogo from '../../assets/Facebook-f_Logo-Blue-Logo.wine.svg';
 
 export const ContactUs = () => {
     return (
@@ -30,14 +33,14 @@ export const ContactUs = () => {
                             className="rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow bg-white"
                         >
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">💻</span>
+                                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <img src={githubLogo} alt="GitHub" className="w-10 h-10" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-2 text-slate-900">GitHub</h3>
                                     <p className="text-gray-600 text-sm mb-3">Contribute to the project</p>
-                                    <a href="https://github.com/Razin-maker/Emp" className="font-medium hover:underline" style={{ color: '#50a7e3' }}>
-                                        github.com/Razin-maker/Emp
+                                    <a href="https://github.com/Employee-Max-Portal" className="font-medium hover:underline" style={{ color: '#50a7e3' }}>
+                                        github.com/Employee-Max-Portal
                                     </a>
                                 </div>
                             </div>
@@ -51,14 +54,14 @@ export const ContactUs = () => {
                             className="rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow bg-white"
                         >
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">💬</span>
+                                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <img src={facebookLogo} alt="Facebook" className="w-10 h-10" />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg mb-2 text-slate-900">Community</h3>
+                                    <h3 className="font-bold text-lg mb-2 text-slate-900">Facebook Community</h3>
                                     <p className="text-gray-600 text-sm mb-3">Join our discussions</p>
-                                    <a href="#" className="font-medium hover:underline" style={{ color: '#50a7e3' }}>
-                                        Join Discord
+                                    <a href="https://www.facebook.com/share/g/1ApGJkawDp/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="font-medium hover:underline" style={{ color: '#50a7e3' }}>
+                                        Join Facebook Group
                                     </a>
                                 </div>
                             </div>
@@ -72,14 +75,14 @@ export const ContactUs = () => {
                             className="rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow bg-white"
                         >
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">📧</span>
+                                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <img src={gmailLogo} alt="Gmail" className="w-10 h-10" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg mb-2 text-slate-900">Email</h3>
                                     <p className="text-gray-600 text-sm mb-3">Direct support</p>
                                     <a href="mailto:hello@emp.dev" className="font-medium hover:underline" style={{ color: '#50a7e3' }}>
-                                        hello@emp.dev
+                                        tech@sohub.com.bd
                                     </a>
                                 </div>
                             </div>
